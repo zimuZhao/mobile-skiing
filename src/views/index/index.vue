@@ -6,7 +6,7 @@
       <!-- home -->
       <v-tab-container-item id="tabContainHome">
 
-        <v-swipe class="container-swipe" :auto="0" :style="{height:carouselH + 'px'}">
+        <v-swipe class="container-swipe" :auto="4000" :style="{height:carouselH + 'px'}">
           <v-swipe-item v-for="item in funcMenus">
             <router-link :to="item.href">
               <img :src="item.carousel"/>
@@ -51,6 +51,7 @@
     </v-tab-container>
 
     <!-- Footer-menu -->
+    <div style="height: 60px"/>
     <v-tabbar v-model="tabMenu" fixed>
       <v-tab-item v-for="item in menus" :id="item.id" @click.native="tabContain = item.native">
         <img slot="icon" :src="item.src"/>
@@ -236,17 +237,6 @@
 </script>
 
 <style lang="less">
-  html body {
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-
   .pull-left {
     float: left;
   }
