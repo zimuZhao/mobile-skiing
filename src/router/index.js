@@ -9,29 +9,13 @@ export default new Router({
       path: '/',
       component: () => import ('../views/index/index.vue')
     },
-    /**
-     * example router
-     */
     {
       path: '/buy/',
       component: () => import ('../views/buy/index.vue'),
-      // children: [{
-      //   path: 'subscribe/',
-      //   component: () => import ('../components/SubscribeApp/index.vue'),
-      //   children: [{
-      //     path: '',
-      //     component: () => import ('../components/SubscribeApp/module/sales/index.vue')
-      //   }, {
-      //     path: 'sales',
-      //     component: () => import ('../components/SubscribeApp/module/sales/index.vue')
-      //   }, {
-      //     path: 'flow',
-      //     component: () => import ('../components/SubscribeApp/module/flow/index.vue')
-      //   }, {
-      //     path: 'hot',
-      //     component: () => import ('../components/SubscribeApp/module/hot/index.vue')
-      //   }]
-      // }]
+    },
+    {
+      path: '/buy/detail',
+      component: () => import ('../views/buy-detail/index.vue'),
     },
 
   ],
