@@ -23,14 +23,16 @@
 
     <v-field label="提货人" placeholder="请输入姓名" v-model="username"/>
     <v-field label="联系电话" placeholder="请输入手机号" type="tel" v-model="phone"/>
-    <v-field label="备注" placeholder="备注商品规格参数，如颜色、尺码等" type="textarea" rows="2" v-modal="remark"/>
+    <v-field label="备注" placeholder="备注商品规格参数，如颜色、尺码等" type="textarea" rows="2" v-model="remark"/>
     <v-field label="收货地址" placeholder="选择自提可不填写，选择邮寄必须填写" v-model="address"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
     <v-radio title="提货方式" v-model="pickup" :options="pickupOptions"/>
     <v-cell title="邮寄运费" :value="'¥ ' + freight" v-if="pickup === 'YJ'"/>
     <v-cell title="自提地址" :value="pickupAds" v-if="pickup === 'ZT'"/>
     <v-cell title="预付定金" :value="'¥ ' + deposit"/>
-    <v-button type="primary" style="width:100%;">去付款</v-button>
+    <router-link to="/buy/rest">
+      <v-button type="primary" style="width:100%;">去付款</v-button>
+    </router-link>
 
   </div>
 </template>

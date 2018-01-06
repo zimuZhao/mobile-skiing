@@ -20,10 +20,7 @@
     </div>
 
     <div class="container-recommend" v-for="item in recommends">
-      <div>
-        <span class="pull-left">{{item.name}}</span>
-        <em class="pull-right">更多...</em>
-      </div>
+      <div>{{item.name}}</div>
       <div class="row">
         <div class="col" v-for="inner in item.list">
           <a :href="inner.href">
@@ -56,7 +53,7 @@
         funcMenus: [
           {
             name: '限时团购',
-            href: '/',
+            href: '/buy',
             icon: require('../../../assets/images/home.svg'),
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }, {
@@ -87,17 +84,17 @@
               name: '我是名字',
               price: '33.33',
               img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
+              href: '/#/buy/detail'
             }, {
               name: '我是名字',
               price: '33.33',
               img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
+              href: '/#/buy/detail'
             }, {
               name: '我是名字',
               price: '33.33',
               img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
+              href: '/#/buy/detail'
             }]
           },
           {

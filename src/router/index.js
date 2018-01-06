@@ -18,7 +18,7 @@ export default new Router({
       component: () => import ('../views/index/mine/buy-detail/index.vue')
     },
     {
-      path: '/buy/',
+      path: '/buy',
       component: () => import ('../views/buy/index.vue'),
     },
     {

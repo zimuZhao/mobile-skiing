@@ -35,9 +35,9 @@
 
 <template>
   <div id="app">
-    <router-link class="page-back" v-if="visible" :to="'/'">
-      <i class="mintui mintui-back"></i>
-    </router-link>
+    <div class="page-back" v-if="visible" @click="$router.go(-1)">
+      <i class="mintui mintui-back"/>
+    </div>
     <router-view></router-view>
   </div>
 </template>
