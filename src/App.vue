@@ -1,5 +1,7 @@
 <style lang="less">
   html, body {
+    padding: 0;
+    margin: 0 2px;
     background-color: #fafafa;
     -webkit-overflow-scrolling: touch;
     user-select: none;
