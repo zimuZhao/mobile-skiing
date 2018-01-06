@@ -44,7 +44,7 @@
   } from 'mint-ui';
 
   export default{
-    name: 'BuyDeposit',
+    name: 'IndexMineBuyDetail',
     components: {
       vField,
       vRadio,

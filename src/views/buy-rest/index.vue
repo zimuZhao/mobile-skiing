@@ -46,7 +46,7 @@
   } from 'mint-ui';
 
   export default{
-    name: 'BuyDeposit',
+    name: 'BuyRest',
     components: {
       vField,
       vRadio,

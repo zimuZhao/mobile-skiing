@@ -58,7 +58,7 @@
   } from 'mint-ui';
 
   export default {
-    name: 'RecommendBuy',
+    name: 'Buy',
     components: {
       vSpinner
     },
@@ -76,7 +76,7 @@
     mounted(){
       const _this = this;
       _this.wrapperH = document.documentElement.clientHeight - _this.$refs.wrapper.getBoundingClientRect().top;
-      for (let i = 1; i < 31; i++) {
+      for (let i = 1; i < 11; i++) {
         _this.list.push(i);
       }
     },
@@ -158,6 +158,7 @@
       overflow: scroll;
 
       ul {
+        padding-left: 0;
         list-style: none outside none;
       }
 

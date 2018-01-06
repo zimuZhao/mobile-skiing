@@ -27,7 +27,7 @@
     },
     data(){
       return {
-        ifLogin: true
+        ifLogin: false
       }
     }
   }

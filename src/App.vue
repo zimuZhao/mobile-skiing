@@ -49,7 +49,7 @@
     name: 'mobileSkiing',
     computed: {
       visible() {
-        return ['/', '/header', '/search'].indexOf(this.$route.path) < 0;
+        return ['/', '/manage'].indexOf(this.$route.path) < 0;
       }
     }
   }

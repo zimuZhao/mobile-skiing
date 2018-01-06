@@ -33,6 +33,14 @@ export default new Router({
       path: '/buy/rest',
       component: () => import ('../views/buy-rest/index.vue'),
     },
+    {
+      path: '/manage',
+      component: () => import ('../views/manage/index.vue')
+    },
+    {
+      path: '/manage/buy',
+      component: () => import ('../views/manage-buy/index.vue')
+    },
 
   ],
   /**
