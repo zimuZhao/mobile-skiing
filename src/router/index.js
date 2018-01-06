@@ -10,6 +10,14 @@ export default new Router({
       component: () => import ('../views/index/index.vue')
     },
     {
+      path: '/index/mine/buy',
+      component: () => import ('../views/index/mine/buy/index.vue')
+    },
+    {
+      path: '/index/mine/buy/detail',
+      component: () => import ('../views/index/mine/buy-detail/index.vue')
+    },
+    {
       path: '/buy/',
       component: () => import ('../views/buy/index.vue'),
     },
