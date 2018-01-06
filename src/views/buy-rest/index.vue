@@ -1,6 +1,6 @@
 <template>
   <div class="buy-deposit">
-    <h1 class="page-title">订单详情-定金结算</h1>
+    <h1 class="page-title">订单详情-尾款结算</h1>
 
     <div class="commodity-info">
       <div class="pro-img">
@@ -19,18 +19,20 @@
       </div>
     </div>
 
-    <h5>注：信息填写后不能修改,请确认您的信息是否正确</h5>
+    <h5>核对信息后请尽快支付尾款</h5>
 
-    <v-field label="提货人" placeholder="请输入姓名" v-model="username"/>
-    <v-field label="联系电话" placeholder="请输入手机号" type="tel" v-model="phone"/>
-    <v-field label="备注" placeholder="备注商品规格参数，如颜色、尺码等" type="textarea" rows="2" v-modal="remark"/>
-    <v-field label="收货地址" placeholder="选择自提可不填写，选择邮寄必须填写" v-model="address"/>
+    <v-cell title="提货人" :value="username"/>
+    <v-cell title="联系电话" :value="phone"/>
+    <v-cell title="备注" :value="remark"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
-    <v-radio title="提货方式" v-model="pickup" :options="pickupOptions"/>
-    <v-cell title="邮寄运费" :value="'¥ ' + freight" v-if="pickup === 'YJ'"/>
-    <v-cell title="自提地址" :value="pickupAds" v-if="pickup === 'ZT'"/>
-    <v-cell title="预付定金" :value="'¥ ' + deposit"/>
-    <v-button type="primary" style="width:100%;">去付款</v-button>
+    <v-cell title="提货方式" :value="pickup"/>
+    <v-cell title="自提地址" :value="pickupAds" v-if="pickup === '线下自提'"/>
+    <v-cell title="收货地址" :value="address" v-if="pickup === '邮寄'"/>
+    <v-cell title="商品总价" :value="'¥ ' + total"/>
+    <v-cell title="邮寄运费" :value="'¥ ' + freight" v-if="pickup === '邮寄'"/>
+    <v-cell title="已付定金" :value="'¥ ' + deposit"/>
+    <v-cell title="剩余尾款" :value="'¥ ' + rest"/>
+    <v-button type="primary" class="w-100">去付款</v-button>
 
   </div>
 </template>
@@ -53,27 +55,17 @@
     },
     data(){
       return {
-        username: '',
-        phone: '',
-        remark: '',
-        address: '',
-        pickup: 'ZT',
-        pickupOptions: [
-          {
-            label: '线下自提',
-            value: 'ZT'
-          },
-          {
-            label: '邮寄',
-            value: 'YJ'
-          }
-        ],
+        username: '赵赵',
+        phone: '1234567890',
+        remark: '白色，35',
+        address: '北京市通州区星悦国际',
+        pickup: '邮寄',
         freight: 100.00,
         pickupAds: '北京市通州区星悦国际',
-        deposit: 100.00
+        total: 299,
+        deposit: 100.00,
+        rest: 190.00
       }
-    },
-    created() {
     }
   }
 </script>
@@ -169,5 +161,8 @@
       }
     }
 
+    .w-100 {
+      width: 100%;
+    }
   }
 </style>

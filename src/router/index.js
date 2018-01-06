@@ -21,6 +21,10 @@ export default new Router({
       path: '/buy/deposit',
       component: () => import ('../views/buy-deposit/index.vue'),
     },
+    {
+      path: '/buy/rest',
+      component: () => import ('../views/buy-rest/index.vue'),
+    },
 
   ],
   /**
