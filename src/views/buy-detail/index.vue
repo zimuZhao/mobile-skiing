@@ -15,6 +15,7 @@
         定金：¥<span>299.99</span>
       </div>
       <div>起购人次：10000</div>
+      <div>截止时间：2018-01-02 22:00:00</div>
     </div>
 
     <div class="module-sty">
@@ -27,6 +28,7 @@
       <span>详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述</span>
     </div>
 
+    <div style="height: 41px"/>
     <div class="btn">立即参团</div>
 
   </div>
@@ -69,14 +71,6 @@
 <style scoped lang="less">
 
   .buy-detail {
-
-    .page-title {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      font-size: 20px;
-      line-height: 1;
-    }
 
     .detail-swipe {
       max-width: 640px;

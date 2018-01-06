@@ -109,14 +109,6 @@
 <style scoped lang="less">
   .recommend-buy {
 
-    .page-title {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      font-size: 20px;
-      line-height: 1;
-    }
-
     .three-btn {
       display: flex;
       margin-top: 5px;

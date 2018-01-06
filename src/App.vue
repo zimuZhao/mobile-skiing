@@ -23,6 +23,14 @@
       line-height: 40px;
     }
   }
+
+  .page-title {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1;
+  }
 </style>
 
 <template>
