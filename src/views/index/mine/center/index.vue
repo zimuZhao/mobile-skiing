@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <v-cell title="团购交易记录" is-link to="/index/mine/buy"/>
+    <v-cell title="团购交易记录" is-link to="/index/mine/buy/1233"/>
   </div>
 </template>
 

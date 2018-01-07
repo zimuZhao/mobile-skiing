@@ -23,7 +23,7 @@
       <div>{{item.name}}</div>
       <div class="row">
         <div class="col" v-for="inner in item.list">
-          <a :href="inner.href">
+          <a :href="'/#/' + item.type + '/detail/'+ inner.href">
             <div>{{inner.name}}</div>
             <span>¥ {{inner.price}}</span>
             <img class="c-menu-img" :src="inner.img"/>
@@ -154,8 +154,8 @@
     }
 
     .container-recommend {
-      padding: 1px;
-      margin-top: 30px;
+      padding: 4px;
+      margin-top: 10px;
 
       .row {
         display: flex;

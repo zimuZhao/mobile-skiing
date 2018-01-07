@@ -1,37 +1,36 @@
 <template>
   <div class="index-mine-buy-detail">
-    <h1 class="page-title">订单详情</h1>
+    <h1 class="page-title">{{moduleName}}</h1>
 
     <div class="commodity-info">
       <div class="pro-img">
-        <img alt="" src="../../../../assets/images/home-swipe1.jpg"/>
+        <img :alt="detail.name" :src="detail.src"/>
       </div>
       <div class="product-info-box">
         <div class="product-name">
-          <span>商品名最长不超过18个字</span>
+          <span>{{detail.name}}</span>
         </div>
-        <div class="product-price-m">
-          总价：¥<span>499.00</span>
-          定金：¥<span>100.00</span>
-        </div>
-        <div class="gray-pro-info">起购人次: <span>10000</span></div>
-        <div class="gray-pro-info">团购截止时间: <span>2018-01-31 00:00:00</span></div>
+        <div class="product-price-m">总价：¥ {{detail.total}}</div>
+        <div class="product-price-m">定金：¥ {{detail.deposit}}</div>
+        <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
+        <div class="gray-pro-info">团购截止时间: <span>{{detail.deadline}}</span></div>
       </div>
     </div>
 
-    <v-cell title="订单状态" :value="status"/>
-    <v-cell title="尾款截止支付时间" v-if="status === '待尾款'" :value="restTime"/>
-    <v-cell title="提货人" :value="username"/>
-    <v-cell title="联系电话" :value="phone"/>
-    <v-cell title="备注" :value="remark"/>
+
+    <v-cell title="订单状态" :value="detail.status"/>
+    <v-cell title="尾款截止支付时间" v-if="detail.status === '待尾款'" :value="detail.restTime"/>
+    <v-cell title="提货人" :value="detail.username"/>
+    <v-cell title="联系电话" :value="detail.phone"/>
+    <v-cell title="备注" :value="detail.remark"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
-    <v-cell title="提货方式" :value="pickup"/>
-    <v-cell title="自提地址" :value="pickupAds" v-if="pickup === '线下自提'"/>
-    <v-cell title="收货地址" :value="address" v-if="pickup === '邮寄'"/>
-    <v-cell title="商品总价" :value="'¥ ' + total"/>
-    <v-cell title="邮寄运费" :value="'¥ ' + freight" v-if="pickup === '邮寄'"/>
-    <v-cell title="已付定金" :value="'¥ ' + deposit"/>
-    <v-cell title="剩余尾款" :value="'¥ ' + rest"/>
+    <v-cell title="提货方式" :value="detail.pickup"/>
+    <v-cell title="自提地址" :value="detail.pickupAds" v-if="detail.pickup === '线下自提'"/>
+    <v-cell title="收货地址" :value="detail.address" v-if="detail.pickup === '邮寄'"/>
+    <v-cell title="商品总价" :value="'¥ ' + detail.total"/>
+    <v-cell title="邮寄运费" :value="'¥ ' + detail.reight" v-if="detail.pickup === '邮寄'"/>
+    <v-cell title="已付定金" :value="'¥ ' + detail.deposit"/>
+    <v-cell title="剩余尾款" :value="'¥ ' + detail.rest"/>
 
   </div>
 </template>
@@ -42,6 +41,7 @@
     Radio as vRadio,
     Cell as vCell
   } from 'mint-ui';
+  import Service from './service';
 
   export default{
     name: 'IndexMineBuyDetail',
@@ -52,18 +52,23 @@
     },
     data(){
       return {
-        status: '待尾款',
-        restTime: '2018-10-10 00:00:00',
-        username: '赵赵',
-        phone: '1234567890',
-        remark: '白色，35',
-        address: '北京市通州区星悦国际',
-        pickup: '线下自提',
-        freight: 100.00,
-        pickupAds: '北京市通州区星悦国际',
-        total: 299,
-        deposit: 100.00,
-        rest: 190.00
+        moduleName: '',
+        detail: {}
+      }
+    },
+    mounted(){
+      this.serviceGet();
+    },
+    methods: {
+      serviceGet() {
+        const _this = this;
+//        _this.spinFlag = true;
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          _this.detail = data.moduleData;
+//          _this.spinFlag = false;
+
+        });
       }
     }
   }
@@ -111,7 +116,6 @@
         padding-top: 11px;
 
         .product-name {
-          height: 42px;
           color: #232326;
           font-size: 15px;
           line-height: 20px;

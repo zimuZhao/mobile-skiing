@@ -1,6 +1,6 @@
 <template>
   <div class="index-mine-buy">
-    <h1 class="page-title">团购交易记录</h1>
+    <h1 class="page-title">{{moduleName}}</h1>
 
     <v-navbar v-model="selected">
       <v-tab-item id="1">全部</v-tab-item>
@@ -11,18 +11,18 @@
     <!-- tab-container -->
     <v-tab-container v-model="selected">
       <v-tab-container-item id="1">
-        <router-link to="/index/mine/buy/detail">
+        <router-link v-for="item in detailList" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
-                <span>商品名最长不超过18个字</span>
-                <span class="buy-status">待尾款</span>
+                <span>{{item.name}}</span>
+                <span class="buy-status">{{item.status}}</span>
               </div>
               <div class="product-price-m">
-                总价：¥<span>499.00</span>
+                总价：¥<span>{{item.total}}</span>
               </div>
-              <div class="gray-pro-info">订单号: <span>10000</span></div>
-              <div class="gray-pro-info">交易时间: <span>2018-01-31 00:00:00</span></div>
+              <div class="gray-pro-info">订单号: <span>{{item.orderNum}}</span></div>
+              <div class="gray-pro-info">交易时间: <span>{{item.tradeTime}}</span></div>
             </div>
           </div>
         </router-link>
@@ -65,7 +65,7 @@
 
 
   </div>
-</template>`
+</template>
 
 <script>
   import {
@@ -74,6 +74,7 @@
     TabContainer as vTabContainer,
     TabContainerItem as vTabContainerItem
   } from 'mint-ui';
+  import Service from './service';
 
   export default{
     name: 'IndexMineBuy',
@@ -85,7 +86,26 @@
     },
     data(){
       return {
-        selected: '1'
+        moduleName: '',
+        selected: '1',
+        detailList: []
+      }
+    },
+    mounted(){
+      this.serviceGet();
+    },
+    methods: {
+      serviceGet() {
+        const _this = this;
+//        _this.spinFlag = true;
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          for (const item of data.moduleData) {
+            _this.detailList.push(item);
+          }
+//          _this.spinFlag = false;
+
+        });
       }
     }
   }
@@ -97,7 +117,6 @@
 
     .commodity-info {
       display: flex;
-      height: 100%;
       margin: 10px 0;
       font-size: 0;
       border: 1px solid #eee;

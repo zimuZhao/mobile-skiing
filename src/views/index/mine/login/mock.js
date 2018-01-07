@@ -6,11 +6,11 @@ const mockData = {
   login: {
     API: {
       GET: {
-        code: 200,
-        msg: "成功",
-        data: {
-          name:'test',
-          level:'VIP会员'
+        "status": 'true',
+        "sign": 'true',
+        result: {
+          name: 'test',
+          level: 'VIP会员'
         }
       }
     }

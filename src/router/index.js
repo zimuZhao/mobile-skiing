@@ -10,11 +10,11 @@ export default new Router({
       component: () => import ('../views/index/index.vue')
     },
     {
-      path: '/index/mine/buy',
+      path: '/index/mine/buy/:userid',
       component: () => import ('../views/index/mine/buy/index.vue')
     },
     {
-      path: '/index/mine/buy/detail',
+      path: '/index/mine/buy/detail/:id',
       component: () => import ('../views/index/mine/buy-detail/index.vue')
     },
     {
@@ -39,7 +39,7 @@ export default new Router({
     },
     {
       path: '/manage/buy',
-      component: () => import ('../views/manage-buy/index.vue')
+      component: () => import ('../views/manage/manage-buy/index.vue')
     },
 
   ],
