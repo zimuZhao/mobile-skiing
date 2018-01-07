@@ -8,7 +8,7 @@ const MODULECONF = {
     NAME: '限时团购',
     MOCK: true,
     API: {
-      GET: 'http://guanjia-task.jd.com/task/manager/initManager'
+      GET: '/'
     },
     PARAMS(params){
       return {

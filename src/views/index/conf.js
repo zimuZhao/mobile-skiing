@@ -8,7 +8,7 @@ const MODULECONF = {
     NAME: '首页',
     MOCK: true,
     API: {
-      GET: 'http://guanjia-task.jd.com/task/manager/initManager'
+      GET: '/'
     },
     PARAMS(params){
       return {
@@ -20,7 +20,7 @@ const MODULECONF = {
     NAME: '登录',
     MOCK: true,
     API: {
-      GET: 'http://guanjia-task.jd.com/task/manager/initManager'
+      GET: '/'
     },
     PARAMS(params){
       return {

@@ -2,7 +2,7 @@
   "name": "mobile-skiing",
   "version": "1.0.0",
   "description": "Melbourne ski club's mobile site",
-  "author": "ShuaiXUE",
+  "author": "ZIMU",
   "private": true,
   "scripts": {
     "dev": "webpack-dashboard -- node build/dev-server.js",

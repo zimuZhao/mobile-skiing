@@ -8,7 +8,7 @@ const MODULECONF = {
     NAME: '订单详情-定金结算',
     MOCK: true,
     API: {
-      GET: 'http://guanjia-task.jd.com/task/manager/initManager',
+      GET: '/',
       POST: ''
     },
     getPARAMS(params){

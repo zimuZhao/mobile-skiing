@@ -7,39 +7,39 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: () => import ('../views/index/index.vue')
+      component: () => import ('../views/index/index.html')
     },
     {
       path: '/index/mine/buy',
-      component: () => import ('../views/index/mine/buy/index.vue')
+      component: () => import ('../views/index/mine/buy/index.html')
     },
     {
       path: '/index/mine/buy/detail',
-      component: () => import ('../views/index/mine/buy-detail/index.vue')
+      component: () => import ('../views/index/mine/buy-detail/index.html')
     },
     {
       path: '/buy',
-      component: () => import ('../views/buy/index.vue'),
+      component: () => import ('../views/buy/index.html'),
     },
     {
       path: '/buy/detail',
-      component: () => import ('../views/buy-detail/index.vue'),
+      component: () => import ('../views/buy-detail/index.html'),
     },
     {
       path: '/buy/deposit',
-      component: () => import ('../views/buy-deposit/index.vue'),
+      component: () => import ('../views/buy-deposit/index.html'),
     },
     {
       path: '/buy/rest',
-      component: () => import ('../views/buy-rest/index.vue'),
+      component: () => import ('../views/buy-rest/index.html'),
     },
     {
       path: '/manage',
-      component: () => import ('../views/manage/index.vue')
+      component: () => import ('../views/manage/index.html')
     },
     {
       path: '/manage/buy',
-      component: () => import ('../views/manage-buy/index.vue')
+      component: () => import ('../views/manage-buy/index.html')
     },
 
   ],
