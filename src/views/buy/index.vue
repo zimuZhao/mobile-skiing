@@ -1,6 +1,6 @@
 <template>
   <div class="recommend-buy">
-    <h1 class="page-title">限时团购</h1>
+    <h1 class="page-title">{{moduleName}}</h1>
 
     <div class="three-btn">
       <div class="btn-flex" @click="timeClick">
@@ -64,6 +64,7 @@
     },
     data(){
       return {
+        moduleName: '',
         salesArrow: true,     // true: arrow-up  false: arrow-down
         priceArrow: false,
         // wrapper

@@ -1,37 +1,35 @@
 <template>
   <div class="buy-deposit">
-    <h1 class="page-title">订单详情-定金结算</h1>
+    <h1 class="page-title">{{moduleName}}</h1>
 
     <div class="commodity-info">
       <div class="pro-img">
-        <img alt="" src="../../assets/images/home-swipe1.jpg"/>
+        <img :alt="detail.name" :src="detail.src"/>
       </div>
       <div class="product-info-box">
         <div class="product-name">
-          <span>商品名最长不超过18个字</span>
+          <span>{{detail.name}}</span>
         </div>
-        <div class="product-price-m">
-          总价：¥<span>499.00</span>
-          定金：¥<span>100.00</span>
-        </div>
-        <div class="gray-pro-info">起购人次: <span>10000</span></div>
-        <div class="gray-pro-info">团购截止时间: <span>2018-01-31 00:00:00</span></div>
+        <div class="product-price-m">总价：¥ {{detail.total}}</div>
+        <div class="product-price-m">定金：¥ {{detail.deposit}}</div>
+        <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
+        <div class="gray-pro-info">团购截止时间: <span>{{detail.deadline}}</span></div>
       </div>
     </div>
 
     <h5>注：信息填写后不能修改,请确认您的信息是否正确</h5>
 
-    <v-field label="提货人" placeholder="请输入姓名" v-model="username"/>
-    <v-field label="联系电话" placeholder="请输入手机号" type="tel" v-model="phone"/>
+    <v-field label="提货人" placeholder="请输入姓名" :state="nameWarn ? 'warning' : ''" v-model="username"/>
+    <v-field label="联系电话" placeholder="请输入手机号" type="tel" :state="phoneWarn ? 'warning' : ''" v-model="phone"/>
     <v-field label="备注" placeholder="备注商品规格参数，如颜色、尺码等" type="textarea" rows="2" v-model="remark"/>
-    <v-field label="收货地址" placeholder="选择自提可不填写，选择邮寄必须填写" v-model="address"/>
+    <v-field label="收货地址" placeholder="选择邮寄必须填写" v-model="address"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
     <v-radio title="提货方式" v-model="pickup" :options="pickupOptions"/>
-    <v-cell title="邮寄运费" :value="'¥ ' + freight" v-if="pickup === 'YJ'"/>
-    <v-cell title="自提地址" :value="pickupAds" v-if="pickup === 'ZT'"/>
-    <v-cell title="预付定金" :value="'¥ ' + deposit"/>
+    <v-cell title="邮寄运费" :value="'¥ ' + detail.freight" v-if="pickup === 'YJ'"/>
+    <v-cell title="自提地址" :value="detail.pickupAds" v-if="pickup === 'ZT'"/>
+    <v-cell title="预付定金" :value="'¥ ' + detail.deposit"/>
     <router-link to="/buy/rest">
-      <v-button type="primary" style="width:100%;">去付款</v-button>
+      <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
     </router-link>
 
   </div>
@@ -42,8 +40,10 @@
     Field as vField,
     Radio as vRadio,
     Cell as vCell,
-    Button as vButton
+    Button as vButton,
+    Toast as vToast
   } from 'mint-ui';
+  import Service from './service';
 
   export default{
     name: 'BuyDeposit',
@@ -55,6 +55,10 @@
     },
     data(){
       return {
+        moduleName: '',
+        detail: {},
+        nameWarn: false,
+        phoneWarn: false,
         username: '',
         phone: '',
         remark: '',
@@ -69,13 +73,45 @@
             label: '邮寄',
             value: 'YJ'
           }
-        ],
-        freight: 100.00,
-        pickupAds: '北京市通州区星悦国际',
-        deposit: 100.00
+        ]
       }
     },
-    created() {
+    mounted(){
+      this.serviceGet();
+    },
+    methods: {
+      serviceGet() {
+        const _this = this;
+//        _this.spinFlag = true;
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          _this.detail = data.moduleData;
+//          _this.spinFlag = false;
+
+        });
+      },
+      goPay(){
+        const _this = this;
+        if (_this.username === '') {
+          _this.nameWarn = true;
+          vToast('姓名不能为空');
+        } else if (_this.phone === '') {
+          _this.phoneWarn = true;
+          vToast('手机号不能为空');
+        } else {
+          const params = {
+            username: _this.username,
+            phone: _this.phone,
+            remark: _this.remark,
+            address: _this.address,
+            pickup: _this.pickup
+          };
+          Service.post(params).then((data) => {
+
+          });
+        }
+      }
+
     }
   }
 </script>
@@ -169,6 +205,10 @@
         }
 
       }
+    }
+
+    .w-p-100 {
+      width: 100%;
     }
 
   }

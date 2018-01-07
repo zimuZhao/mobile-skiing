@@ -1,6 +1,6 @@
 <template>
   <div class="buy-detail">
-    <h1 class="page-title">商品详情</h1>
+    <h1 class="page-title">{{moduleName}}</h1>
 
     <v-swipe class="detail-swipe" :auto="0" :style="{width:imgSize + 'px',height:imgSize + 'px'}">
       <v-swipe-item v-for="item in detail.imgs">
@@ -53,6 +53,7 @@
     },
     data(){
       return {
+        moduleName: '',
         imgSize: 0,
         detail: {}
       }
