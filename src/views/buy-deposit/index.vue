@@ -158,7 +158,6 @@
         padding-top: 11px;
 
         .product-name {
-          height: 42px;
           color: #232326;
           font-size: 15px;
           line-height: 20px;
