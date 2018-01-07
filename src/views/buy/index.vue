@@ -3,7 +3,7 @@
     <h1 class="page-title">限时团购</h1>
 
     <div class="three-btn">
-      <div class="btn-flex">
+      <div class="btn-flex" @click="timeClick">
         <div class="btn-sty">
           发布时间
         </div>
@@ -26,26 +26,25 @@
       <ul class="page-infinite-list" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading"
           infinite-scroll-distance="50">
         <li v-for="item in list" class="page-infinite-listitem">
-          <a href="#/buy/detail">
+          <a :href="item.href">
             <div class="pro-img">
-              <img alt="" src="../../assets/images/home-swipe1.jpg"/>
+              <img :alt="item.name" :src="item.src"/>
             </div>
             <div class="product-info-box">
               <div class="product-name">
-                <span>商品名最长不超过18个字</span>
+                <span>{{item.name}}</span>
               </div>
-              <div class="product-price-m">总价：¥ 499.00</div>
-              <div class="product-price-m">定金：¥ 100.00</div>
-              <div class="gray-pro-info">起购人次: <span>10000</span></div>
-              <div class="gray-pro-info">截止时间: <span>2018-01-31 00:00:00</span></div>
+              <div class="product-price-m">总价：¥ {{item.total}}</div>
+              <div class="product-price-m">定金：¥ {{item.deposit}}</div>
+              <div class="gray-pro-info">起购人次: <span>{{item.count}}</span></div>
+              <div class="gray-pro-info">截止时间: <span>{{item.deadline}}</span></div>
             </div>
           </a>
         </li>
       </ul>
 
       <p v-show="loading" class="page-infinite-loading">
-        <v-spinner type="fading-circle"></v-spinner>
-        加载中...
+        <v-spinner type="double-bounce" color="#26a2ff"/>
       </p>
     </div>
 
@@ -56,6 +55,7 @@
   import{
     Spinner as vSpinner
   } from 'mint-ui';
+  import Service from './service';
 
   export default {
     name: 'Buy',
@@ -76,35 +76,45 @@
     mounted(){
       const _this = this;
       _this.wrapperH = document.documentElement.clientHeight - _this.$refs.wrapper.getBoundingClientRect().top;
-      for (let i = 1; i < 11; i++) {
-        _this.list.push(i);
-      }
     },
     methods: {
+      timeClick(){
+        const _this = this;
+        _this.list.splice(0, _this.list.length);
+        _this.serviceGet();
+      },
       salesClick(){
         const _this = this;
+        _this.list.splice(0, _this.list.length);
         _this.salesArrow = !_this.salesArrow;
+        _this.serviceGet();
       },
       priceClick(){
         const _this = this;
+        _this.list.splice(0, _this.list.length);
         _this.priceArrow = !_this.priceArrow;
+        _this.serviceGet();
       },
       loadMore(){
         const _this = this;
         _this.loading = true;
-        setTimeout(() => {
-          let last = _this.list[_this.list.length - 1];
-          for (let i = 1; i < 10; i++) {
-            _this.list.push(last + i);
+        _this.serviceGet();
+        _this.loading = false;
+      },
+      serviceGet() {
+        const _this = this;
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          for (const item of data.moduleData) {
+            _this.list.push(item);
           }
-          _this.loading = false;
-        }, 2500);
+        });
       }
     }
   }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
   .recommend-buy {
 
     .three-btn {
@@ -255,6 +265,13 @@
         border-top: 1px solid #eee;
       }
 
+    }
+
+    .page-infinite-loading {
+      text-align: center;
+      div {
+        display: inline-block;
+      }
     }
   }
 </style>

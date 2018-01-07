@@ -1,11 +1,11 @@
-import {mergeMock} from '../../../public/utils/confUtils'
+import {mergeMock} from '../../public/utils/confUtils'
 
 const PAGEMOCK = true;
 
 const MODULECONF = {
 
-  login: {
-    NAME: '登录',
+  buy: {
+    NAME: '限时团购',
     MOCK: true,
     API: {
       GET: 'http://guanjia-task.jd.com/task/manager/initManager'
@@ -16,7 +16,6 @@ const MODULECONF = {
       }
     }
   }
-
 
 };
 

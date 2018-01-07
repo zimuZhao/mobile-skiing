@@ -39,7 +39,7 @@
     Swipe as vSwipe,
     SwipeItem as vSwipeItem
   } from 'mint-ui';
-
+  import Service from './service';
 
   export default {
     name: 'IndexHome',
@@ -77,107 +77,28 @@
             icon: require('../../../assets/images/home.svg'),
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }],
-        recommends: [
-          {
-            name: '团购推荐',
-            list: [{
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/#/buy/detail'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/#/buy/detail'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/#/buy/detail'
-            }]
-          },
-          {
-            name: '教练推荐',
-            list: [{
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }]
-          },
-          {
-            name: '拼车推荐',
-            list: [{
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }]
-          },
-          {
-            name: '拼住宿推荐',
-            list: [{
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            }, {
-              name: '我是名字',
-              price: '33.33',
-              img: require('../../../assets/images/home-swipe1.jpg'),
-              href: '/'
-            },
-              {
-                name: '二手推荐',
-                list: [{
-                  name: '我是名字',
-                  price: '33.33',
-                  img: require('../../../assets/images/home-swipe1.jpg'),
-                  href: '/'
-                }, {
-                  name: '我是名字',
-                  price: '33.33',
-                  img: require('../../../assets/images/home-swipe1.jpg'),
-                  href: '/'
-                }, {
-                  name: '我是名字',
-                  price: '33.33',
-                  img: require('../../../assets/images/home-swipe1.jpg'),
-                  href: '/'
-                }]
-              }]
-          }]
+        recommends: []
       }
     },
     created() {
       const W = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
       this.carouselH = Math.floor(96.00 / 480.00 * W);
+    },
+    mounted(){
+      this.serviceGet();
+    },
+    methods: {
+      serviceGet() {
+        const _this = this;
+//        _this.spinFlag = true;
+
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          _this.recommends = data.moduleData;
+//          _this.spinFlag = false;
+
+        });
+      }
     }
   }
 </script>

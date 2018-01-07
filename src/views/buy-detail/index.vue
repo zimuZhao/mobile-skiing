@@ -3,7 +3,7 @@
     <h1 class="page-title">商品详情</h1>
 
     <v-swipe class="detail-swipe" :auto="0" :style="{width:imgSize + 'px',height:imgSize + 'px'}">
-      <v-swipe-item v-for="item in detailImgs">
+      <v-swipe-item v-for="item in detail.imgs">
         <img :src="item.src"/>
       </v-swipe-item>
     </v-swipe>
@@ -11,26 +11,26 @@
     <div class="module-sty">
       <div class="product-info-box">
         <div class="product-name">
-          <span>商品名最长不超过18个字</span>
+          <span>{{detail.name}}</span>
         </div>
-        <div class="product-price-m">总价：¥ 499.00</div>
-        <div class="product-price-m">定金：¥ 100.00</div>
-        <div class="gray-pro-info">起购人次: <span>10000</span></div>
-        <div class="gray-pro-info">截止时间: <span>2018-01-31 00:00:00</span></div>
+        <div class="product-price-m">总价：¥ {{detail.total}}</div>
+        <div class="product-price-m">定金：¥ {{detail.deposit}}</div>
+        <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
+        <div class="gray-pro-info">截止时间: <span>{{detail.deadline}}</span></div>
       </div>
     </div>
 
     <div class="module-sty">
       <div>商品描述</div>
-      <div>详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述</div>
+      <div>{{detail.goodsDescribe}}</div>
     </div>
 
     <div class="module-sty">
       <div>规格参数</div>
-      <div>详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述</div>
+      <div>{{detail.specifications}}</div>
     </div>
 
-    <div style="height: 41px"/>
+    <div class="h-51"/>
     <router-link to="/buy/deposit">
       <div class="btn">立即参团</div>
     </router-link>
@@ -43,6 +43,7 @@
     Swipe as vSwipe,
     SwipeItem as vSwipeItem
   } from 'mint-ui';
+  import Service from './service';
 
   export default{
     name: 'BuyDetail',
@@ -53,21 +54,27 @@
     data(){
       return {
         imgSize: 0,
-        detailImgs: [{
-          src: require('../../assets/images/home-swipe1.jpg')
-        }, {
-          src: require('../../assets/images/home-swipe1.jpg')
-        }, {
-          src: require('../../assets/images/home-swipe1.jpg')
-        }, {
-          src: require('../../assets/images/home-swipe1.jpg')
-        }, {
-          src: require('../../assets/images/home-swipe1.jpg')
-        }]
+        detail: {}
       }
     },
     created() {
       this.imgSize = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    },
+    mounted(){
+      this.serviceGet();
+    },
+    methods: {
+      serviceGet() {
+        const _this = this;
+//        _this.spinFlag = true;
+
+        Service.get({}).then((data) => {
+          _this.moduleName = data.moduleName;
+          _this.detail = data.moduleData;
+//          _this.spinFlag = false;
+
+        });
+      }
     }
   }
 </script>
@@ -162,6 +169,10 @@
       text-align: center;
       background-color: #ef4f4f;
       z-index: 1;
+    }
+
+    .h-51 {
+      height: 51px;
     }
 
   }

@@ -2,10 +2,8 @@ import Q from 'q';
 import API from '@/public/utils/api';
 import CONF from '@/views/index/conf';
 
-const M = CONF['login'];
+const M = CONF['home'];
 if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
-
-let serviceData = null;
 
 export default {
 
