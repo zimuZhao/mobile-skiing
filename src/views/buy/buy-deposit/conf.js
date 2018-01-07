@@ -1,4 +1,4 @@
-import {mergeMock} from '../../public/utils/confUtils'
+import {mergeMock} from '../../../public/utils/confUtils'
 
 const PAGEMOCK = true;
 

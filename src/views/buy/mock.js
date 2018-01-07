@@ -6,11 +6,11 @@ const mockData = {
   buy: {
     API: {
       GET: {
-        code: 200,
-        msg: "成功",
-        'data|5': [
+        "status": 'true',
+        "sign": 'true',
+        'result|5': [
           {
-            href: '#/buy/detail',
+            href: '123',
             src: require('../../assets/images/home-swipe1.jpg'),
             name: '商品名最长不超过18个字',
             total: '499.00',

@@ -31,7 +31,7 @@
     </div>
 
     <div class="h-51"/>
-    <router-link to="/buy/deposit">
+    <router-link :to="'/buy/deposit/' + this.$route.params.id">
       <div class="btn">立即参团</div>
     </router-link>
 
@@ -62,6 +62,7 @@
       this.imgSize = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     },
     mounted(){
+      console.log(this.$route.params);
       this.serviceGet();
     },
     methods: {

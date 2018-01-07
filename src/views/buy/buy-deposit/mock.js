@@ -1,15 +1,15 @@
 import Mock from 'mockjs';
-import CONF from '@/views/buy-deposit/conf'
+import CONF from '@/views/buy/buy-deposit/conf'
 import {initMock} from '@/public/utils/confUtils';
 
 const mockData = {
   buyDeposit: {
     API: {
       GET: {
-        code: 200,
-        msg: "成功",
-        data: {
-          src: require('../../assets/images/home-swipe1.jpg'),
+        "status": 'true',
+        "sign": 'true',
+        result: {
+          src: require('../../../assets/images/home-swipe1.jpg'),
           name: '商品名最长不超过18个字',
           total: '499.00',
           deposit: '100.00',
@@ -19,10 +19,10 @@ const mockData = {
           freight: '100.00' // 邮费
         }
       },
-      post: {
-        code: 200,
-        msg: "成功",
-        data: 'successful'
+      POST: {
+        "status": 'true',
+        "sign": 'true',
+        result: 'successful'
       }
     }
   }

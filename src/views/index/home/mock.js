@@ -6,9 +6,9 @@ const mockData = {
     home: {
       API: {
         GET: {
-          code: 200,
-          msg: "成功",
-          data: [
+          "status": 'true',
+          "sign": 'true',
+          result: [
             {
               name: '团购推荐',
               'list|3': [{

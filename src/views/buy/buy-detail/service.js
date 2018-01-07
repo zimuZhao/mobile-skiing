@@ -1,8 +1,8 @@
 import Q from 'q';
 import API from '@/public/utils/api';
-import CONF from '@/views/buy-rest/conf';
+import CONF from '@/views/buy/buy-detail/conf';
 
-const M = CONF['buyRest'];
+const M = CONF['buyDetail'];
 if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
 
 export default {

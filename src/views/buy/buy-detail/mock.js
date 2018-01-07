@@ -1,24 +1,24 @@
 import Mock from 'mockjs';
-import CONF from '@/views/buy-detail/conf'
+import CONF from '@/views/buy/buy-detail/conf'
 import {initMock} from '@/public/utils/confUtils';
 
 const mockData = {
   buyDetail: {
     API: {
       GET: {
-        code: 200,
-        msg: "成功",
-        data: {
+        "status": 'true',
+        "sign": 'true',
+        result: {
           imgs: [{
-            src: require('../../assets/images/home-swipe1.jpg')
+            src: require('../../../assets/images/home-swipe1.jpg')
           }, {
-            src: require('../../assets/images/home-swipe1.jpg')
+            src: require('../../../assets/images/home-swipe1.jpg')
           }, {
-            src: require('../../assets/images/home-swipe1.jpg')
+            src: require('../../../assets/images/home-swipe1.jpg')
           }, {
-            src: require('../../assets/images/home-swipe1.jpg')
+            src: require('../../../assets/images/home-swipe1.jpg')
           }, {
-            src: require('../../assets/images/home-swipe1.jpg')
+            src: require('../../../assets/images/home-swipe1.jpg')
           }],
           name: '商品名最长不超过18个字',
           total: '499.00',

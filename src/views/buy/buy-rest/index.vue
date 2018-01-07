@@ -24,10 +24,10 @@
     <v-cell title="备注" :value="detail.remark"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
     <v-cell title="提货方式" :value="detail.pickup"/>
-    <v-cell title="自提地址" :value="detail.pickupAds" v-if="pickup === '线下自提'"/>
-    <v-cell title="收货地址" :value="detail.address" v-if="pickup === '邮寄'"/>
+    <v-cell title="自提地址" :value="detail.pickupAds" v-if="detail.pickup === '线下自提'"/>
+    <v-cell title="收货地址" :value="detail.address" v-if="detail.pickup === '邮寄'"/>
     <v-cell title="商品总价" :value="'¥ ' + detail.total"/>
-    <v-cell title="邮寄运费" :value="'¥ ' + detail.freight" v-if="pickup === '邮寄'"/>
+    <v-cell title="邮寄运费" :value="'¥ ' + detail.freight" v-if="detail.pickup === '邮寄'"/>
     <v-cell title="已付定金" :value="'¥ ' + detail.deposit"/>
     <v-cell title="剩余尾款" :value="'¥ ' + detail.rest"/>
     <v-button type="primary" class="w-100">去付款</v-button>

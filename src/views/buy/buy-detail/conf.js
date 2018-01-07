@@ -1,15 +1,14 @@
-import {mergeMock} from '../../public/utils/confUtils'
+import {mergeMock} from '../../../public/utils/confUtils'
 
 const PAGEMOCK = true;
 
 const MODULECONF = {
 
-  buyRest: {
-    NAME: '订单详情-尾款结算',
+  buyDetail: {
+    NAME: '商品详情',
     MOCK: true,
     API: {
-      GET: '/',
-      POST: ''
+      GET: '/'
     },
     PARAMS(params){
       return {
