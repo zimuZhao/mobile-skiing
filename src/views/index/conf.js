@@ -18,13 +18,14 @@ const MODULECONF = {
   },
   login: {
     NAME: '登录',
-    MOCK: true,
+    MOCK: false,
     API: {
-      GET: '/'
+      GET: '/open/login'
     },
     PARAMS(params){
       return {
-        token: params.token
+        phone: params.phone,
+        password: params.password
       }
     }
   }

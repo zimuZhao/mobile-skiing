@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Q from 'q';
 import C from '../conf';
+import {Toast} from 'mint-ui';
 
 function ajax(url, type, options) {
 
@@ -32,16 +33,17 @@ function ajax(url, type, options) {
             resolve(result.data.result);
 
           } else {
-            alert('请求失败！');
+            Toast(result.data.result);
             reject({
               error: true,
-              msg: "请求失败"
+              msg: result.data.result
             });
           }
         } else {
+          Toast(result.data.result);
           reject({
-            errno: result.errno,
-            msg: result.msg
+            errno: true,
+            msg: result.data.result
           });
         }
       })
