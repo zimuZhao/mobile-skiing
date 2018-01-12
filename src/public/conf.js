@@ -4,5 +4,6 @@
  */
 export default {
   HOST: "http://www.ypblog.me:9999",
-  DEBUGMOCK: process.env.STATS === 'dev'
+  DEBUGMOCK: true
+  // DEBUGMOCK: process.env.STATS === 'dev'
 }

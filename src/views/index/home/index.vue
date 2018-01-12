@@ -23,11 +23,13 @@
       <div>{{item.name}}</div>
       <div class="row">
         <div class="col" v-for="inner in item.list">
-          <a :href="'/#/' + item.type + '/detail/'+ inner.href">
+          <router-link :to="item.type + '/detail/'+ inner.href">
+            <!--<a :href="'/#/' + item.type + '/detail/'+ inner.href">-->
             <div>{{inner.name}}</div>
             <span>¥ {{inner.price}}</span>
             <img class="c-menu-img" :src="inner.img"/>
-          </a>
+            <!--</a>-->
+          </router-link>
         </div>
       </div>
     </div>

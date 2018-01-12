@@ -3,7 +3,8 @@ import API from '@/public/utils/api';
 import CONF from '@/views/buy/buy-rest/conf';
 
 const M = CONF['buyRest'];
-if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+// if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+M.MOCK ? require('./mock') : '';
 
 export default {
 

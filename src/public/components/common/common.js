@@ -5,7 +5,8 @@ import { formatMoney } from '@/public/utils/format'
 
 const M = CONF['login'];
 
-if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+// if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+M.MOCK ? require('./mock') : '';
 
 /**
  * [加工 接口返回的原始数据]

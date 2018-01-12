@@ -3,7 +3,8 @@ import API from '@/public/utils/api';
 import CONF from '@/views/buy/buy-deposit/conf';
 
 const M = CONF['buyDeposit'];
-if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+// if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+M.MOCK ? require('./mock') : '';
 
 export default {
 

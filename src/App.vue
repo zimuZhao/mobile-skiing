@@ -1,3 +1,23 @@
+<template>
+  <div id="app">
+    <div class="page-back" v-if="visible" @click="$router.go(-1)">
+      <i class="mintui mintui-back"/>
+    </div>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'mobileSkiing',
+    computed: {
+      visible() {
+        return ['/', '/manage'].indexOf(this.$route.path) < 0;
+      }
+    }
+  }
+</script>
+
 <style lang="less">
   html, body {
     padding: 0;
@@ -35,22 +55,3 @@
   }
 </style>
 
-<template>
-  <div id="app">
-    <div class="page-back" v-if="visible" @click="$router.go(-1)">
-      <i class="mintui mintui-back"/>
-    </div>
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-  export default {
-    name: 'mobileSkiing',
-    computed: {
-      visible() {
-        return ['/', '/manage'].indexOf(this.$route.path) < 0;
-      }
-    }
-  }
-</script>
