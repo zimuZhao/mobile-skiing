@@ -14,7 +14,7 @@
     <v-field label="商品描述" placeholder="请输入商品详细描述" type="textarea" rows="4" v-model="describe"/>
     <v-field label="规格参数" placeholder="请输入商品规格" type="textarea" rows="4" v-model="param"/>
     <!-- 缺图片上传：封面 + 描述 -->
-    <router-link to="/buy/rest">
+    <router-link to="/buy/detail/13">
       <v-button type="primary" style="width:100%;">确认发布</v-button>
     </router-link>
 
