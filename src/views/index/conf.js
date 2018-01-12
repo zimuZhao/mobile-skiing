@@ -15,21 +15,7 @@ const MODULECONF = {
         token: params.token
       }
     }
-  },
-  login: {
-    NAME: '登录',
-    MOCK: false,
-    API: {
-      GET: '/open/login'
-    },
-    PARAMS(params){
-      return {
-        phone: params.phone,
-        password: params.password
-      }
-    }
   }
-
 
 };
 

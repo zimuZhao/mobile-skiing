@@ -10,7 +10,7 @@ const mockData = {
         "sign": 'true',
         'result|5': [{
           name: '商品名最长不超过18个字',
-          status: '待尾款',
+          status: '待成团',
           total: '499.00',
           orderId: '123', // 查询订单详情用的ID 如果和订单号是一个 该字段省略
           orderNum: '111',   // 订单号

@@ -50,7 +50,7 @@
             <div class="product-info-box">
               <div class="product-name">
                 <span>商品名最长不超过18个字</span>
-                <span class="buy-status">待尾款</span>
+                <span class="buy-status">待提货</span>
               </div>
               <div class="product-price-m">
                 总价：¥<span>499.00</span>
