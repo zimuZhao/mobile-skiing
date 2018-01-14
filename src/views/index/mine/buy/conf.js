@@ -12,6 +12,7 @@ const MODULECONF = {
     },
     PARAMS(params){
       return {
+        type: params.type,     // 全部 || 团购中 || 待提货
         token: params.token
       }
     }

@@ -11,7 +11,7 @@
     <!-- tab-container -->
     <v-tab-container v-model="selected">
       <v-tab-container-item id="1">
-        <router-link v-for="item in detailList" :to="'/index/mine/buy/detail/' + item.orderId">
+        <router-link v-for="item in detailList[0]" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
@@ -28,35 +28,35 @@
         </router-link>
       </v-tab-container-item>
       <v-tab-container-item id="2">
-        <router-link to="/index/mine/buy/detail">
+        <router-link v-for="item in detailList[1]" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
-                <span>商品名最长不超过18个字</span>
-                <span class="buy-status">待尾款</span>
+                <span>{{item.name}}</span>
+                <span class="buy-status">{{item.status}}</span>
               </div>
               <div class="product-price-m">
-                总价：¥<span>499.00</span>
+                总价：¥<span>{{item.total}}</span>
               </div>
-              <div class="gray-pro-info">订单号: <span>10000</span></div>
-              <div class="gray-pro-info">交易时间: <span>2018-01-31 00:00:00</span></div>
+              <div class="gray-pro-info">订单号: <span>{{item.orderNum}}</span></div>
+              <div class="gray-pro-info">交易时间: <span>{{item.tradeTime}}</span></div>
             </div>
           </div>
         </router-link>
       </v-tab-container-item>
       <v-tab-container-item id="3">
-        <router-link to="/index/mine/buy/detail">
+        <router-link v-for="item in detailList[2]" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
-                <span>商品名最长不超过18个字</span>
-                <span class="buy-status">待提货</span>
+                <span>{{item.name}}</span>
+                <span class="buy-status">{{item.status}}</span>
               </div>
               <div class="product-price-m">
-                总价：¥<span>499.00</span>
+                总价：¥<span>{{item.total}}</span>
               </div>
-              <div class="gray-pro-info">订单号: <span>10000</span></div>
-              <div class="gray-pro-info">交易时间: <span>2018-01-31 00:00:00</span></div>
+              <div class="gray-pro-info">订单号: <span>{{item.orderNum}}</span></div>
+              <div class="gray-pro-info">交易时间: <span>{{item.tradeTime}}</span></div>
             </div>
           </div>
         </router-link>
@@ -74,6 +74,7 @@
     TabContainer as vTabContainer,
     TabContainerItem as vTabContainerItem
   } from 'mint-ui';
+  import Q from 'q';
   import Service from './service';
 
   export default{
@@ -98,14 +99,25 @@
       serviceGet() {
         const _this = this;
 //        _this.spinFlag = true;
-        Service.get({}).then((data) => {
-          _this.moduleName = data.moduleName;
-          for (const item of data.moduleData) {
-            _this.detailList.push(item);
+        Q.all([
+          Service.getAll({type: '全部'}),
+          Service.getDeposit({type: '团购中'}),
+          Service.getPickup({type: '待提货'})
+        ]).then(data => {
+          _this.moduleName = data[0].moduleName;
+//          for (const item of data[0].moduleData) {
+//            _this.detailList.push(item);
+//          }
+          for (const detail of data) {
+            let _arr = [];
+            for (const item of detail.moduleData) {
+              _arr.push(item);
+            }
+            _this.detailList.push(_arr);
           }
 //          _this.spinFlag = false;
-
         });
+
       }
     }
   }
