@@ -18,12 +18,11 @@ function ajax(url, type, options) {
         method: type,
         url: C.HOST + url,
         // responseType:'stream',
-        params: options,
+        params: options
       }
     }
     axios(config)
       .then((result) => {
-        // console.log(result)
         if (result && result.status === 401) {
           // location.href = '/views/401.html'
         }
@@ -58,7 +57,6 @@ function ajax(url, type, options) {
 
 const config = {
   get(url, options) {
-    const _self = this;
     return Q.Promise((resolve, reject) => {
       ajax(url, 'get', options)
         .then((data) => {
@@ -70,7 +68,6 @@ const config = {
   },
 
   post(url, options) {
-    const _self = this;
     return Q.Promise((resolve, reject) => {
       ajax(url, 'post', options)
         .then((data) => {
@@ -82,7 +79,6 @@ const config = {
   },
 
   put(url, options) {
-    const _self = this;
     return Q.Promise((resolve, reject) => {
       ajax(url, 'put', options)
         .then((data) => {
@@ -94,7 +90,6 @@ const config = {
   },
 
   delete(url, options) {
-    const _self = this;
     return Q.Promise((resolve, reject) => {
       ajax(url, 'delete', options)
         .then((data) => {
@@ -106,7 +101,6 @@ const config = {
   },
 
   jsonp(url, options) {
-    const _self = this;
     return Q.Promise((resolve, reject) => {
       ajax(url, 'jsonp', options)
         .then((data) => {
