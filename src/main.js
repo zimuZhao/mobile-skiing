@@ -14,11 +14,11 @@ Vue.use(InfiniteScroll);
 import 'mint-ui/lib/style.css';
 
 // 全局组件注册
-// import {Row, Col, Icon, Message} from 'fezui'
-// Vue.component('v-row', Row);
-// Vue.component('v-col', Col);
-// Vue.component('v-icon', Icon);
-// Vue.prototype.$Message = Message;cdmo
+// <div class="page-infinite-loading" v-show='loadingFlag'>
+//   <v-spinner type="fading-circle" color="#26a2ff"/>
+//   </div>
+// import {Spinner} from 'mint-ui'
+// Vue.component('v-spinner', Spinner);
 
 // 这里添加进度条路由api
 // router.beforeEach((to, from, next) => {
