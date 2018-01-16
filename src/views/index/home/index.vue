@@ -60,7 +60,7 @@
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }, {
             name: '预约教练',
-            href: '/',
+            href: '/coach',
             icon: require('../../../assets/images/home.svg'),
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }, {

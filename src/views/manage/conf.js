@@ -21,6 +21,7 @@ const MODULECONF = {
         shopParams: params.param,          // 商品规格
         // startTime: '',                     // 商品开售时间
         endTime: params.deadline,          // 团购截止时间
+        // endTime: Date.parse(params.deadline)/1000
         payTime: params.restDeadline,      // 尾款支付时间
         image: '',                         // 商品封面 ---------------------待协商图片上传规则
         sendPrice: params.post             // 商品邮费
