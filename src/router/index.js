@@ -42,6 +42,10 @@ export default new Router({
       component: () => import ('../views/coach/coach-detail/index.vue'),
     },
     {
+      path: '/coach/book/:id',
+      component: () => import ('../views/coach/coach-book/index.vue'),
+    },
+    {
       path: '/manage',
       component: () => import ('../views/manage/index.vue')
     },

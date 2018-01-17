@@ -13,9 +13,10 @@
         <div class="product-name">
           <span>{{detail.name}}</span>
         </div>
-        <div class="gray-pro-info">教学类型：¥ {{detail.type}}</div>
+        <div class="gray-pro-info">教学类型: {{detail.type}}</div>
         <div class="gray-pro-info">等级资质: {{detail.level}}</div>
-        <div class="gray-pro-info">证书：¥ {{detail.certificate}}</div>
+        <div class="gray-pro-info">证书：{{detail.certificate}}</div>
+        <div class="gray-pro-info">联系方式: {{detail.phone}}</div>
         <!--<div class="gray-pro-info">预约时间: {{item.count}}</div>-->
         <div class="gray-pro-info">价格: ¥ {{detail.price}} / h</div>
       </div>
@@ -27,7 +28,7 @@
     </div>
 
     <div class="h-51"/>
-    <router-link :to="'/buy/deposit/' + this.$route.params.id">
+    <router-link :to="'/coach/book/' + this.$route.params.id">
       <div class="btn">立即预约</div>
     </router-link>
 
