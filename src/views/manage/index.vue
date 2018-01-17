@@ -12,7 +12,7 @@
     </div>
 
     <!--<v-cell title="管理员管理" is-link to="/"/>-->
-    <v-cell title="添加团购商品" is-link to="/manage/buy"/>
+    <v-cell title="添加团购商品" is-link to="/manage/buy/add"/>
 
   </div>
 </template>

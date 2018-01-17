@@ -1,20 +1,23 @@
 import Q from 'q';
 import API from '@/public/utils/api';
-import CONF from '@/views/manage/conf';
+import CONF from '@/views/buy/conf';
 
-const M = CONF['manageBuy'];
+const M = CONF['buy'];
+// if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
+M.MOCK ? require('./mock') : '';
 
 export default {
 
-  post(params = {}){
+  get(params = {}){
 
     const paramsSend = M.PARAMS(params);
     console.log(`------------------${M.NAME}请求参数------------------------`);
     console.log(JSON.stringify(paramsSend));
 
     return Q.Promise((resolve, reject) => {
-      API.post(M['API']['POST'], paramsSend).then((data) => {
+      API.get(M['API']['GET'], paramsSend).then((data) => {
         const rtnData = {
+          moduleName: M['NAME'],
           moduleData: data
         };
         resolve(rtnData);

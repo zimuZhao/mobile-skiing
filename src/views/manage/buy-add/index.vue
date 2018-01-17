@@ -33,7 +33,7 @@
   import Service from './service';
 
   export default{
-    name: 'ManageBuy',
+    name: 'ManageBuyAdd',
     components: {
       vField,
       vRadio,

@@ -50,8 +50,8 @@ export default new Router({
       component: () => import ('../views/manage/index.vue')
     },
     {
-      path: '/manage/buy',
-      component: () => import ('../views/manage/manage-buy/index.vue')
+      path: '/manage/buy/add',
+      component: () => import ('../views/manage/buy-add/index.vue')
     },
 
   ],

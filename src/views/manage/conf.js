@@ -4,7 +4,7 @@ const PAGEMOCK = true;
 
 const MODULECONF = {
 
-  manageBuy: {
+  buyAdd: {
     NAME: '添加团购商品',
     MOCK: true,
     API: {
@@ -25,6 +25,18 @@ const MODULECONF = {
         payTime: params.restDeadline,      // 尾款支付时间
         image: '',                         // 商品封面 ---------------------待协商图片上传规则
         sendPrice: params.post             // 商品邮费
+      }
+    }
+  },
+  buyList: {
+    NAME: '团购订单',
+    MOCK: true,
+    API: {
+      GET: '/'
+    },
+    PARAMS(params){
+      return {
+        token: params.token
       }
     }
   }
