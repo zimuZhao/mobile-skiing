@@ -11,6 +11,11 @@ export default new Router({
       component: () => import ('../views/index/index.vue')
     },
     {
+      name: 'indexMineVIP',
+      path: '/index/mine/vip',
+      component: () => import ('../views/index/mine/vip/index.vue')
+    },
+    {
       name: 'indexMineBuy',
       path: '/index/mine/buy/:userid',
       component: () => import ('../views/index/mine/buy/index.vue')
@@ -59,6 +64,11 @@ export default new Router({
       name: 'manage',
       path: '/manage',
       component: () => import ('../views/manage/index.vue')
+    },
+    {
+      name: 'manageVipSet',
+      path: '/manage/vip/set',
+      component: () => import ('../views/manage/vip-set/index.vue')
     },
     {
       name: 'manageBuyAdd',

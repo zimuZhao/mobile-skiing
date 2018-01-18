@@ -7,7 +7,13 @@
       </div>
       <div class="product-info-box">
         <h5>Kerri</h5>
-        <div class="gray-pro-info">等级: 普通会员</div>
+        <div>
+          <span>等级: 普通会员</span>
+          <router-link to="/index/mine/vip">
+            <v-button class="vip-btn" v-if="!ifVIP">升级VIP</v-button>
+          </router-link>
+        </div>
+
       </div>
     </div>
 
@@ -16,15 +22,21 @@
 </template>
 
 <script>
-  import {Cell as vCell} from 'mint-ui';
+  import {
+    Cell as vCell,
+    Button as vButton
+  } from 'mint-ui';
 
   export default {
     name: 'IndexMine',
     components: {
-      vCell
+      vCell,
+      vButton
     },
     data(){
-      return {}
+      return {
+        ifVIP: false
+      }
     },
     methods: {}
   }
@@ -66,17 +78,12 @@
         padding-right: 10px;
         padding-top: 11px;
 
-        .gray-pro-info {
-          color: darkslategray;
+        .vip-btn {
+          display: inline-block;
+          height: 20px;
+          margin-left: 5px;
+          padding: 0 6px;
           font-size: 13px;
-          display: -webkit-box;
-          display: box;
-          margin-top: 8px;
-          overflow: hidden;
-          height: 15px;
-          line-height: 16px;
-          -webkit-box-align: center;
-          box-align: center;
         }
 
       }

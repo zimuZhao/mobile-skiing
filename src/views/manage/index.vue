@@ -12,6 +12,8 @@
     </div>
 
     <!--<v-cell title="管理员管理" is-link to="/"/>-->
+    <!-- 由于微信后台能管理用户 此处不增加会员管理的相关操作 -->
+    <v-cell title="VIP设置" is-link to="/manage/vip/set"/>
     <v-cell title="添加团购商品" is-link to="/manage/buy/add"/>
     <v-cell title="管理团购订单" is-link to="/manage/buy/list"/>
 

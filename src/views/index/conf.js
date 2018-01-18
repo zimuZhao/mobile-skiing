@@ -15,6 +15,18 @@ const MODULECONF = {
         token: params.token
       }
     }
+  },
+  mineVIP: {
+    NAME: '升级VIP',
+    MOCK: true,
+    API: {
+      GET: '/'
+    },
+    PARAMS(params){
+      return {
+        token: params.token
+      }
+    }
   }
 
 };
