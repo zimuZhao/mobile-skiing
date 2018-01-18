@@ -13,8 +13,8 @@ const mockData = {
               name: '团购推荐',
               type: 'buy',
               'list|3': [{
-                name: '我是名字',
-                price: '33.33',
+                name: '团购商品名',
+                price: '123.45',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]
@@ -23,8 +23,8 @@ const mockData = {
               name: '教练推荐',
               type: 'coach',
               'list|3': [{
-                name: '我是名字',
-                price: '33.33',
+                name: 'X教练',
+                price: '123.45 / h',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]
@@ -33,8 +33,8 @@ const mockData = {
               name: '拼车推荐',
               type: 'carpool',
               'list|3': [{
-                name: '我是名字',
-                price: '33.33',
+                name: '待设计',
+                price: '待设计',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]
@@ -43,8 +43,8 @@ const mockData = {
               name: '拼住宿推荐',
               type: 'stay',
               'list|3': [{
-                name: '我是名字',
-                price: '33.33',
+                name: '待设计',
+                price: '待设计',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]
@@ -53,8 +53,8 @@ const mockData = {
               name: '二手推荐',
               type: 'sechand',
               'list|3': [{
-                name: '我是名字',
-                price: '33.33',
+                name: '待设计',
+                price: '待设计',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]

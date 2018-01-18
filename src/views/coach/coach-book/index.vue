@@ -41,9 +41,7 @@
     <v-field label="备注" placeholder="备注信息" type="textarea" rows="2" v-model="remark"/>
     <v-cell title="支付方式" value="支付宝在线支付"/>
     <v-cell title="预约结算" :value="'¥ ' + detail.price"/>
-    <router-link to="/buy/rest/123">
-      <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
-    </router-link>
+    <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
 
     <v-datetime-picker v-model="pickerVisible" ref="datetimePicker"
                        @visible-change="handleVisibleChange"
@@ -86,7 +84,7 @@
         remark: '',
         dateEmpty: '',
         pickerVisible: '',
-        formatDatetime:''
+        formatDatetime: ''
       }
     },
     mounted(){
@@ -121,6 +119,7 @@
           };
           Service.post(params).then((data) => {
           });
+          _this.$router.push('#');
         }
       },
       chooseTime(){

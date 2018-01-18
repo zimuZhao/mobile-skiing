@@ -28,9 +28,7 @@
     <v-cell title="邮寄运费" :value="'¥ ' + detail.freight" v-if="pickup === 'YJ'"/>
     <v-cell title="自提地址" :value="detail.pickupAds" v-if="pickup === 'ZT'"/>
     <v-cell title="预付定金" :value="'¥ ' + detail.deposit"/>
-    <router-link to="/buy/rest/123">
-      <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
-    </router-link>
+    <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
 
   </div>
 </template>
@@ -109,6 +107,7 @@
           Service.post(params).then((data) => {
 
           });
+          _this.$router.push('/buy/rest/123');
         }
       }
 

@@ -8,17 +8,14 @@ const mockData = {
       GET: {
         "status": 'true',
         "sign": 'true',
-        'result|5': [
-          {
-            href: '123',
-            src: require('../../assets/images/home-swipe1.jpg'),
-            name: '商品名最长不超过18个字',
-            total: '499.00',
-            deposit: '100.00',
-            count: '10000',
-            deadline: '2018-01-01 00:00:00'
-          }
-        ]
+        'result|5': [{
+          name: '商品名最长不超过18个字',
+          status: '已成团',
+          total: '499.00',
+          orderId: '123', // 查询订单详情用的ID 如果和订单号是一个 该字段省略
+          orderNum: '111',   // 订单号
+          tradeTime: '2018-01-01 00:00:00', // 交易时间
+        }]
       }
     }
   }
