@@ -85,6 +85,16 @@ export default new Router({
       path: '/manage/coach/add',
       component: () => import ('../views/manage/coach-add/index.vue')
     },
+    {
+      name: 'carpool',
+      path: '/carpool',
+      component: () => import ('../views/carpool/index.vue'),
+    },
+    {
+      name: 'carpool',
+      path: '/carpool/detail/:id',
+      component: () => import ('../views/carpool/carpool-detail/index.vue'),
+    },
 
   ],
   /**

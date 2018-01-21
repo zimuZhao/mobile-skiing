@@ -26,7 +26,7 @@
           <router-link :to="item.type + '/detail/'+ inner.href">
             <!--<a :href="'/#/' + item.type + '/detail/'+ inner.href">-->
             <div>{{inner.name}}</div>
-            <span>¥ {{inner.price}}</span>
+            <span>{{'¥ ' + inner.price}}</span>
             <img class="c-menu-img" :src="inner.img"/>
             <!--</a>-->
           </router-link>
@@ -65,7 +65,7 @@
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }, {
             name: '拼车服务',
-            href: '/',
+            href: '/carpool',
             icon: require('../../../assets/images/home.svg'),
             carousel: require('../../../assets/images/home-swipe1.jpg')
           }, {

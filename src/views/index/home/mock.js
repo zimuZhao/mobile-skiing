@@ -33,9 +33,9 @@ const mockData = {
               name: '拼车推荐',
               type: 'carpool',
               'list|3': [{
-                name: '待设计',
-                price: '待设计',
-                img: require('../../../assets/images/home-swipe1.jpg'),
+                name: '目的地',
+                price: '10 / 人',
+                img: require('../../../assets/images/home-swipe1.jpg'), // 图片区分是车主还是乘客
                 href: '123'
               }]
             },
