@@ -80,6 +80,11 @@ export default new Router({
       path: '/manage/buy/list',
       component: () => import ('../views/manage/buy-list/index.vue')
     },
+    {
+      name: 'manageCoachAdd',
+      path: '/manage/coach/add',
+      component: () => import ('../views/manage/coach-add/index.vue')
+    },
 
   ],
   /**

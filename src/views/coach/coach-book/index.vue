@@ -21,21 +21,7 @@
 
     <h5>注：信息填写后不能修改,请确认您的信息是否正确</h5>
 
-    <v-cell title="预约时间1">
-      <v-datetime v-model="dateEmpty"
-                  placeholder="Select date"
-                  type="datetime"
-                  moment-locale="es"
-                  input-format="DD-MM-YYYY HH:mm"
-                  input-class="my-input-class"
-                  wrapper-class="my-wrapper-class"
-                  :disabled-dates="['2017-09-07', ['2017-09-25', '2017-10-05']]"
-                  auto-continue
-                  auto-close
-                  monday-first
-                  required/>
-    </v-cell>
-    <v-field label="预约时间2" v-model="formatDatetime" @click.native="chooseTime"/>
+    <v-field label="预约时间" v-model="formatDatetime" @click.native="chooseTime"/>
     <v-field label="预约人" placeholder="请输入姓名" :state="nameWarn ? 'warning' : ''" v-model="username"/>
     <v-field label="联系电话" placeholder="请输入手机号" type="tel" :state="phoneWarn ? 'warning' : ''" v-model="phone"/>
     <v-field label="备注" placeholder="备注信息" type="textarea" rows="2" v-model="remark"/>
@@ -45,8 +31,9 @@
 
     <v-datetime-picker v-model="pickerVisible" ref="datetimePicker"
                        @visible-change="handleVisibleChange"
-                       @confirm="handleChange" year-format="{value} 年" month-format="{value} 月"
-                       date-format="{value} 日" :startDate="new Date()" :endDate="new Date('2018-12-31')"/>
+                       @confirm="handleChange" month-format="{value} 月" date-format="{value} 日"
+                       :startDate="new Date()" :endDate="new Date('2018-12-31')"
+                       :startHour="Number(20)" :endHour="Number(20)"/>
   </div>
 </template>
 
@@ -58,8 +45,6 @@
     Button as vButton,
     Toast as vToast
   } from 'mint-ui';
-  import 'vue-datetime/dist/vue-datetime.css';
-  import {Datetime as vDatetime} from 'vue-datetime';
   import {DatetimePicker as vDatetimePicker} from 'mint-ui';
   import Service from './service';
 
@@ -70,7 +55,6 @@
       vRadio,
       vCell,
       vButton,
-      vDatetime,
       vDatetimePicker
     },
     data(){

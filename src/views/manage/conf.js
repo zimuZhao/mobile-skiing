@@ -39,6 +39,38 @@ const MODULECONF = {
         token: params.token
       }
     }
+  },
+  vipSet: {
+    NAME: 'VIP设置',
+    MOCK: true,
+    API: {
+      POST: '/admin/vipSet'
+    },
+    PARAMS(params){
+      return {
+        vipPrice: params.vipPrice,
+        vipExpiry: params.vipExpiry
+      }
+    }
+  },
+  coachAdd: {
+    NAME: '添加教练',
+    MOCK: true,
+    API: {
+      POST: '/admin/addCoach'
+    },
+    PARAMS(params){
+      return {
+        coachname: params.coachname,
+        teachType: params.teachType,
+        level: params.level,
+        certificate: params.certificate,
+        phone: params.phone,
+        price: params.price,
+        intro: params.intro,
+        image: ''                         // 教练图片 ---------------------待协商图片上传规则
+      }
+    }
   }
 
 };

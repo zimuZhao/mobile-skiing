@@ -2,7 +2,7 @@ import Q from 'q';
 import API from '@/public/utils/api';
 import CONF from '@/views/manage/conf';
 
-const M = CONF['vipSet'];
+const M = CONF['coachAdd'];
 
 export default {
 
