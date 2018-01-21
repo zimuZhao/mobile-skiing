@@ -18,6 +18,7 @@
     </div>
 
     <v-cell title="团购交易记录" is-link to="/index/mine/buy/1233"/>
+    <v-cell title="发布拼车信息" is-link to="/index/mine/vip/carpool"/>
   </div>
 </template>
 

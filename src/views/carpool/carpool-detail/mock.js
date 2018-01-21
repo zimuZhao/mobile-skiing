@@ -9,6 +9,7 @@ const mockData = {
         "status": 'true',
         "sign": 'true',
         result: {
+          departure: 'A区B街道',
           destination: 'XX雪山',
           name: '@pick(["乘客 - 大木头","车主 - 咿呀咿呀哟"])',
           date: '2018-01-01 16:30',

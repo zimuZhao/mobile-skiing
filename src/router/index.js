@@ -26,6 +26,11 @@ export default new Router({
       component: () => import ('../views/index/mine/buy-detail/index.vue')
     },
     {
+      name: 'indexMineVIPCarpool',
+      path: '/index/mine/vip/carpool',
+      component: () => import ('../views/index/mine/vip-carpool/index.vue')
+    },
+    {
       name: 'buy',
       path: '/buy',
       component: () => import ('../views/buy/index.vue'),

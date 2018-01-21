@@ -52,7 +52,24 @@ const MODULECONF = {
         token: params.token
       }
     }
-  }
+  },
+  mineVIPcarpool: {
+    NAME: '发布拼车信息',
+    MOCK: true,
+    API: {
+      POST: '/admin/add/carpool'
+    },
+    PARAMS(params){
+      return {
+        departure: params.departure,
+        destination: params.destination,
+        date: params.date,
+        price: params.price,
+        tripDescribe: params.tripDescribe,
+        carDescribe: params.carDescribe
+      }
+    }
+  },
 
 };
 

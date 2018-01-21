@@ -11,6 +11,7 @@
           <span>{{detail.date}}</span>
         </div>
         <div class="product-price-m">{{detail.name}}</div>
+        <div class="product-price-m">出发地：{{detail.departure}}</div>
         <div class="gray-pro-info">价格（¥）/人: {{detail.price}} / h</div>
         <v-progress :value="Number(detail.review)" class="pro-review">
           <div slot="start">评分：</div>
