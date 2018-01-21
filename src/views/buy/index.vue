@@ -25,7 +25,7 @@
     <div class="page-infinite-wrapper" ref="wrapper" :style="{height: wrapperH + 'px'}">
       <ul class="page-infinite-list" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading"
           infinite-scroll-distance="50">
-        <li v-for="item in list" class="page-infinite-listitem">
+        <li v-for="(item,idx) in list" :key="idx" class="page-infinite-listitem">
           <a :href="'#/buy/detail/' + item.href">
             <div class="pro-img">
               <img :alt="item.name" :src="item.src"/>

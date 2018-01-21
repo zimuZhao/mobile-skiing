@@ -1,6 +1,6 @@
 import Q from 'q';
 import API from '@/public/utils/api';
-import CONF from '@/views/coach/coach-detail/conf';
+import CONF from '@/views/coach/conf';
 
 const M = CONF['coachDetail'];
 // if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';

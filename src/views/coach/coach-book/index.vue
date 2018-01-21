@@ -64,7 +64,7 @@
   import Service from './service';
 
   export default{
-    name: 'BuyDeposit',
+    name: 'CoachBook',
     components: {
       vField,
       vRadio,

@@ -20,7 +20,7 @@
   import Service from './service';
 
   export default{
-    name: 'ManageBuyAdd',
+    name: 'ManageVipSet',
     components: {
       vField,
       vRadio,

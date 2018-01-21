@@ -1,5 +1,5 @@
 import Mock from 'mockjs';
-import CONF from '@/views/coach/coach-book/conf'
+import CONF from '@/views/coach/conf'
 import {initMock} from '@/public/utils/confUtils';
 
 const mockData = {

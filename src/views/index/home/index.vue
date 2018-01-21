@@ -1,7 +1,7 @@
 <template>
   <div class="index-home">
     <v-swipe class="container-swipe" :auto="4000" :style="{height:carouselH + 'px'}">
-      <v-swipe-item v-for="item in funcMenus">
+      <v-swipe-item v-for="(item,idx) in funcMenus" :key="idx">
         <router-link :to="item.href">
           <img :src="item.carousel"/>
         </router-link>
@@ -10,7 +10,7 @@
 
     <div class="container-menu">
       <div class="row">
-        <div class="col" v-for="item in funcMenus">
+        <div class="col" v-for="(item,idx) in funcMenus" :key="idx">
           <router-link :to="item.href">
             <img class="c-menu-img" :src="item.icon"/>
             <span>{{item.name}}</span>
@@ -19,10 +19,10 @@
       </div>
     </div>
 
-    <div class="container-recommend" v-for="item in recommends">
+    <div class="container-recommend" v-for="(item,idx) in recommends" :key="idx">
       <div>{{item.name}}</div>
       <div class="row">
-        <div class="col" v-for="inner in item.list">
+        <div class="col" v-for="(inner,idx) in item.list" :key="idx">
           <router-link :to="item.type + '/detail/'+ inner.href">
             <!--<a :href="'/#/' + item.type + '/detail/'+ inner.href">-->
             <div>{{inner.name}}</div>

@@ -11,7 +11,7 @@
     <!-- tab-container -->
     <v-tab-container v-model="selected">
       <v-tab-container-item id="1">
-        <router-link v-for="item in detailList[0]" :to="'/index/mine/buy/detail/' + item.orderId">
+        <router-link v-for="(item,idx) in detailList[0]" :key="idx" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
@@ -28,7 +28,7 @@
         </router-link>
       </v-tab-container-item>
       <v-tab-container-item id="2">
-        <router-link v-for="item in detailList[1]" :to="'/index/mine/buy/detail/' + item.orderId">
+        <router-link v-for="(item,idx) in detailList[1]" :key="idx" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
@@ -45,7 +45,7 @@
         </router-link>
       </v-tab-container-item>
       <v-tab-container-item id="3">
-        <router-link v-for="item in detailList[2]" :to="'/index/mine/buy/detail/' + item.orderId">
+        <router-link v-for="(item,idx) in detailList[2]" :key="idx" :to="'/index/mine/buy/detail/' + item.orderId">
           <div class="commodity-info">
             <div class="product-info-box">
               <div class="product-name">
@@ -78,7 +78,7 @@
   import Service from './service';
 
   export default{
-    name: 'IndexMineBuy',
+    name: 'ManageBuyList',
     components: {
       vNavbar,
       vTabItem,

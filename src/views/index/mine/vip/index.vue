@@ -18,7 +18,7 @@
   import Service from './service';
 
   export default{
-    name: 'MineVIP',
+    name: 'IndexMineVIP',
     components: {
       vCell,
       vButton

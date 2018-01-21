@@ -3,7 +3,7 @@
     <h1 class="page-title">{{moduleName}}</h1>
 
     <v-swipe class="detail-swipe" :auto="0" :style="{width:imgSize + 'px',height:imgSize + 'px'}">
-      <v-swipe-item v-for="item in detail.imgs">
+      <v-swipe-item v-for="(item,idx) in detail.imgs" :key="idx">
         <img :src="item.src"/>
       </v-swipe-item>
     </v-swipe>

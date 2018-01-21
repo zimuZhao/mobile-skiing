@@ -17,7 +17,7 @@
     <!-- Footer-menu -->
     <div style="height: 60px"/>
     <v-tabbar v-model="tabMenu" fixed>
-      <v-tab-item v-for="item in menus" :id="item.id" @click.native="tabContain = item.native">
+      <v-tab-item v-for="(item, idx) in menus" :key="idx" :id="item.id" @click.native="tabContain = item.native">
         <img slot="icon" :src="item.src"/>
         {{item.name}}
       </v-tab-item>

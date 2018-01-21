@@ -1,6 +1,6 @@
 import Q from 'q';
 import API from '@/public/utils/api';
-import CONF from '@/views/buy/buy-rest/conf';
+import CONF from '@/views/buy/conf';
 
 const M = CONF['buyRest'];
 // if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';

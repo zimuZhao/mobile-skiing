@@ -1,6 +1,6 @@
 import Q from 'q';
 import API from '@/public/utils/api';
-import CONF from '@/views/index/mine/buy-detail/conf';
+import CONF from '@/views/index/conf';
 
 const M = CONF['mineBuyDetail'];
 // if (process.env.STATS === 'dev') M.MOCK ? require('./mock') : '';
