@@ -58,7 +58,6 @@
         const _this = this;
 //        _this.spinFlag = true;
         Service.get({}).then(data => {
-          debugger
           _this.moduleName = data.moduleName;
           _this.coachname = data.moduleData.name;
           _this.teachType = data.moduleData.type;

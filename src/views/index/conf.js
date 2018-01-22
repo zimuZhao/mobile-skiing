@@ -70,6 +70,19 @@ const MODULECONF = {
       }
     }
   },
+  mineCarpool: {
+    NAME: '拼车记录',
+    MOCK: true,
+    API: {
+      GET: '/'
+    },
+    PARAMS(params){
+      return {
+        type: params.type,     // 全部 || 待确认 || 已确认
+        token: params.token
+      }
+    }
+  }
 
 };
 
