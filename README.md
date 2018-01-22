@@ -27,3 +27,5 @@ VIP设置 | http://zimu4show.cn/skiing-demo/#/manage/vip/set
 管理团购订单 | http://zimu4show.cn/skiing-demo/#/manage/buy/list
 管理团购订单-详情 | http://zimu4show.cn/skiing-demo/#/index/mine/buy/detail/123
 添加教练 | http://zimu4show.cn/skiing-demo/#//manage/coach/add
+管理教练 | /manage/coach/list
+编辑教练信息 | /manage/coach/detail/123

@@ -17,6 +17,7 @@
     <v-cell title="添加团购商品" is-link to="/manage/buy/add"/>
     <v-cell title="管理团购订单" is-link to="/manage/buy/list"/>
     <v-cell title="添加教练" is-link to="/manage/coach/add"/>
+    <v-cell title="管理教练" is-link to="/manage/coach/list"/>
 
   </div>
 </template>

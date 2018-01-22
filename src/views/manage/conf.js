@@ -71,6 +71,38 @@ const MODULECONF = {
         image: ''                         // 教练图片 ---------------------待协商图片上传规则
       }
     }
+  },
+  coachList: {
+    NAME: '管理教练',
+    MOCK: true,
+    API: {
+      GET: '/'
+    },
+    PARAMS(params){
+      return {
+        token: params.token
+      }
+    }
+  },
+  coachDetail: {
+    NAME: '修改教练信息',
+    MOCK: true,
+    API: {
+      GET: '/coachDetail',
+      // POST: '/'
+    },
+    PARAMS(params){
+      return {
+        coachname: params.coachname,
+        teachType: params.teachType,
+        level: params.level,
+        certificate: params.certificate,
+        phone: params.phone,
+        price: params.price,
+        intro: params.intro,
+        image: ''                         // 教练图片 ---------------------待协商图片上传规则
+      }
+    }
   }
 
 };

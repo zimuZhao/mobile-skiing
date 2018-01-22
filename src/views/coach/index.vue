@@ -26,9 +26,9 @@
               <div class="product-name">
                 <span>{{item.name}}</span>
               </div>
-              <div class="gray-pro-info">教学类型：¥ {{item.type}}</div>
+              <div class="gray-pro-info">教学类型：{{item.type}}</div>
               <div class="gray-pro-info">等级资质: {{item.level}}</div>
-              <div class="gray-pro-info">证书：¥ {{item.certificate}}</div>
+              <div class="gray-pro-info">证书： {{item.certificate}}</div>
               <!--<div class="gray-pro-info">预约时间: {{item.count}}</div>-->
               <div class="gray-pro-info">价格: ¥ {{item.price}} / h</div>
             </div>

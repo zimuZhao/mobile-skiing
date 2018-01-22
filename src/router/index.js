@@ -91,12 +91,22 @@ export default new Router({
       component: () => import ('../views/manage/coach-add/index.vue')
     },
     {
+      name: 'manageCoachList',
+      path: '/manage/coach/list',
+      component: () => import ('../views/manage/coach-list/index.vue')
+    },
+    {
+      name: 'manageCoachDetail',
+      path: '/manage/coach/detail/:id',
+      component: () => import ('../views/manage/coach-detail/index.vue')
+    },
+    {
       name: 'carpool',
       path: '/carpool',
       component: () => import ('../views/carpool/index.vue'),
     },
     {
-      name: 'carpool',
+      name: 'carpoolDetail',
       path: '/carpool/detail/:id',
       component: () => import ('../views/carpool/carpool-detail/index.vue'),
     },
