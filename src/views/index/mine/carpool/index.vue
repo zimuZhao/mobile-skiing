@@ -4,8 +4,9 @@
 
     <v-navbar v-model="selected">
       <v-tab-item id="1">全部</v-tab-item>
-      <v-tab-item id="2">待确认</v-tab-item>
-      <v-tab-item id="3">已确认</v-tab-item>
+      <v-tab-item id="2">已确认</v-tab-item>
+      <!-- 如果是发布人就是待确认；如果是普通用户就是待评价 -->
+      <v-tab-item id="3">待确认/待评价</v-tab-item>
     </v-navbar>
 
     <!-- tab-container -->
@@ -95,8 +96,8 @@
 //        _this.spinFlag = true;
         Q.all([
           Service.getAll({type: '全部'}),
-          Service.getDeposit({type: '待确认'}),
-          Service.getPickup({type: '已确认'})
+          Service.getDeposit({type: '已确认'}),
+          Service.getPickup({type: '待评价'})
         ]).then(data => {
           _this.moduleName = data[0].moduleName;
 //          for (const item of data[0].moduleData) {

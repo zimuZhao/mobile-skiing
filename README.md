@@ -21,6 +21,7 @@
 团购交易记录-详情 | http://zimu4show.cn/skiing-demo/#/index/mine/buy/detail/123
 VIP发布拼车信息 | http://zimu4show.cn/skiing-demo/#/index/mine/vip/carpool
 拼车记录 | /index/mine/carpool
+拼车记录-详情 | /index/mine/carpool/detail/:id
 【管理员】|
 菜单 | http://zimu4show.cn/skiing-demo/#/manage
 VIP设置 | http://zimu4show.cn/skiing-demo/#/manage/vip/set

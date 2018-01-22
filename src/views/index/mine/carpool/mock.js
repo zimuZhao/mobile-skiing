@@ -11,7 +11,7 @@ const mockData = {
         'result|5': [
           {
             href: '123',
-            status: '@pick(["待确认","已确认"])',
+            status: '@pick(["待确认","待评价","已确认"])',
             name: '@pick(["乘客 - 大木头","车主 - 咿呀咿呀哟"])',
             destination: 'XX雪山',
             date: '2018-01-01 16:30',

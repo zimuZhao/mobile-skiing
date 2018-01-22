@@ -82,6 +82,18 @@ const MODULECONF = {
         token: params.token
       }
     }
+  },
+  mineCarpoolDetail: {
+    NAME: '拼车详情',
+    MOCK: true,
+    API: {
+      GET: '/mineCarpoolDetail'
+    },
+    PARAMS(params){
+      return {
+        token: params.token
+      }
+    }
   }
 
 };
