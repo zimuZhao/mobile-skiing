@@ -8,26 +8,34 @@
       </v-swipe-item>
     </v-swipe>
 
-    <div class="module-sty">
+    <div class="module-sty m-t-0">
       <div class="product-info-box">
         <div class="product-name">
           <span>{{detail.name}}</span>
         </div>
-        <div class="product-price-m">总价：¥ {{detail.total}}</div>
-        <div class="product-price-m">定金：¥ {{detail.deposit}}</div>
-        <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
-        <div class="gray-pro-info">截止时间: <span>{{detail.deadline}}</span></div>
+        <div class="pro-price">
+          <span class="product-price-left">总价：¥ {{detail.total}}</span>
+          <span class="product-price-right">定金：¥ {{detail.deposit}}</span>
+        </div>
+        <div class="m-t-10">
+          <div class="gray-pro-info">
+            <div>起购人次: <span>{{detail.count}}</span></div>
+          </div>
+          <div class="gray-pro-info">
+            <div style="text-align: right">截止时间: <span>{{detail.deadline}}</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="module-sty">
-      <div>商品描述</div>
-      <div>{{detail.goodsDescribe}}</div>
+      <div class="des-title">商品描述</div>
+      <div class="describ">{{detail.goodsDescribe}}</div>
     </div>
 
     <div class="module-sty">
-      <div>规格参数</div>
-      <div>{{detail.specifications}}</div>
+      <div class="des-title">规格参数</div>
+      <div class="describ">{{detail.specifications}}</div>
     </div>
 
     <div class="h-51"/>
@@ -105,11 +113,10 @@
         position: relative;
         flex: 1;
         height: 100%;
-        margin-left: 10px;
-        padding-top: 5px;
+        margin: 10px;
 
         .product-name {
-          display: flex;
+          text-align: center;
           margin-bottom: 5px;
           color: #232326;
           font-size: 15px;
@@ -128,34 +135,67 @@
           line-height: 29px;
         }
 
-        .product-price-m {
-          width: 100%;
-          height: 20px;
-          margin-right: 10px;
-          font-size: 12px;
-          color: #f23030;
-          line-height: 20px;
-          overflow: hidden;
+        .pro-price {
+          margin-top: 10px;
+          text-align: center;
+          font-size: 0;
+        }
 
-          span {
-            font-size: 15px;
-          }
+        .product-price-left {
+          color: #ff6363;
+          border: 1px solid #ff6363;
+          padding: 1px 3px;
+          margin: 0;
+          font-size: 12px;
+        }
+
+        .product-price-right {
+          background: #ff6363;
+          margin: 0;
+          padding: 2px 3px;
+          color: #fff;
+          font-size: 12px;
         }
 
         .gray-pro-info {
           color: #848689;
           font-size: 13px;
-          display: -webkit-box;
-          display: box;
+          display: inline-block;
+          width: 48%;
           margin-top: 8px;
           overflow: hidden;
           height: 15px;
           line-height: 16px;
-          -webkit-box-align: center;
-          box-align: center;
+        }
+
+        .m-t-10 {
+          margin-top: 10px;
+        }
+
+        .pull-left {
+          float: left;
+        }
+
+        .pull-right {
+          float: right;
         }
 
       }
+
+      .des-title {
+        padding: 5px;
+        font-size: 1.2em;
+        border-bottom: 1px solid #d7d7d7;
+      }
+
+      .describ {
+        color: #000;
+        padding: 5px;
+      }
+    }
+
+    .m-t-0 {
+      margin-top: 0;
     }
 
     .btn {
@@ -169,7 +209,7 @@
       line-height: 41px;
       font-size: 18px;
       text-align: center;
-      background-color: #ef4f4f;
+      background-color: #ff728c;
       z-index: 1;
     }
 
