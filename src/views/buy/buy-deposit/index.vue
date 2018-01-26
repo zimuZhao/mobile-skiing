@@ -12,8 +12,10 @@
         </div>
         <div class="product-price-m">总价：¥ {{detail.total}}</div>
         <div class="product-price-m">定金：¥ {{detail.deposit}}</div>
-        <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
-        <div class="gray-pro-info">团购截止时间: <span>{{detail.deadline}}</span></div>
+        <div>
+          <div class="gray-pro-info">起购人次: <span>{{detail.count}}</span></div>
+          <div class="gray-pro-info">截止时间: <span>{{detail.deadline}}</span></div>
+        </div>
       </div>
     </div>
 
@@ -28,7 +30,7 @@
     <v-cell title="邮寄运费" :value="'¥ ' + detail.freight" v-if="pickup === 'YJ'"/>
     <v-cell title="自提地址" :value="detail.pickupAds" v-if="pickup === 'ZT'"/>
     <v-cell title="预付定金" :value="'¥ ' + detail.deposit"/>
-    <v-button type="primary" class="w-p-100" @click="goPay">去付款</v-button>
+    <v-button type="primary" class="w-p-100" @click="goPay" style="background-color: #3fbcff">去付款</v-button>
 
   </div>
 </template>
@@ -125,12 +127,13 @@
 
     .commodity-info {
       display: flex;
-      height: 100%;
-      margin: 10px 0;
       font-size: 0;
-      border: 1px solid #eee;
-      text-decoration: none;
-      background: #fafafa;
+      height: 105px;
+      margin-bottom: 10px;
+      padding: 10px 0;
+      position: relative;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
 
       .pro-img {
         position: relative;
@@ -142,8 +145,9 @@
         img {
           display: inline-block;
           width: auto;
-          max-width: 125px;
-          height: 125px;
+          max-width: 100px;
+          height: 100px;
+          border: 1px solid #dcdcdc;
         }
       }
 
@@ -151,18 +155,16 @@
         position: relative;
         flex: 1;
         height: 100%;
-        margin-left: 10px;
-        margin-top: -2px;
-        padding-right: 10px;
-        padding-top: 11px;
+        padding-top: 5px;
 
         .product-name {
+          display: flex;
+          margin-bottom: 5px;
           color: #232326;
           font-size: 15px;
           line-height: 20px;
           overflow: hidden;
           text-overflow: ellipsis;
-          display: flex;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           word-break: break-word;
@@ -191,15 +193,13 @@
 
         .gray-pro-info {
           color: #848689;
-          font-size: 13px;
-          display: -webkit-box;
-          display: box;
+          font-size: 12px;
+          display: inline-block;
           margin-top: 8px;
           overflow: hidden;
           height: 15px;
           line-height: 16px;
-          -webkit-box-align: center;
-          box-align: center;
+          margin-right: 20px;
         }
 
       }
