@@ -1,10 +1,10 @@
 <template>
   <div class="index-home">
     <v-swipe class="container-swipe" :auto="4000" :style="{height:carouselH + 'px'}">
-      <v-swipe-item v-for="(item,idx) in funcMenus" :key="idx">
-        <router-link :to="item.href">
-          <img :src="item.carousel"/>
-        </router-link>
+      <v-swipe-item>
+        <!--<router-link :to="item.href">-->
+        <img :src="carouselImg"/>
+        <!--</router-link>-->
       </v-swipe-item>
     </v-swipe>
 
@@ -13,21 +13,21 @@
         <div class="col" v-for="(item,idx) in funcMenus" :key="idx">
           <router-link :to="item.href">
             <img class="c-menu-img" :src="item.icon"/>
-            <span>{{item.name}}</span>
+            <div class="c-menu-span">{{item.name}}</div>
           </router-link>
         </div>
       </div>
     </div>
 
     <div class="container-recommend" v-for="(item,idx) in recommends" :key="idx">
-      <div>{{item.name}}</div>
+      <div class="recommend-title">{{item.name}}</div>
       <div class="row">
         <div class="col" v-for="(inner,idx) in item.list" :key="idx">
           <router-link :to="item.type + '/detail/'+ inner.href">
             <!--<a :href="'/#/' + item.type + '/detail/'+ inner.href">-->
-            <div>{{inner.name}}</div>
-            <span>{{'¥ ' + inner.price}}</span>
             <img class="c-menu-img" :src="inner.img"/>
+            <div>{{inner.name}}</div>
+            <span class="red">{{'¥ ' + inner.price}}</span>
             <!--</a>-->
           </router-link>
         </div>
@@ -52,32 +52,28 @@
     data() {
       return {
         carouselH: '0px',
+        carouselImg: require('../../../assets/images/banner.jpg'),
         funcMenus: [
           {
             name: '限时团购',
             href: '/buy',
-            icon: require('../../../assets/images/home.svg'),
-            carousel: require('../../../assets/images/home-swipe1.jpg')
+            icon: require('../../../assets/images/1.png')
           }, {
             name: '预约教练',
             href: '/coach',
-            icon: require('../../../assets/images/home.svg'),
-            carousel: require('../../../assets/images/home-swipe1.jpg')
+            icon: require('../../../assets/images/2.png')
           }, {
             name: '拼车服务',
             href: '/carpool',
-            icon: require('../../../assets/images/home.svg'),
-            carousel: require('../../../assets/images/home-swipe1.jpg')
+            icon: require('../../../assets/images/3.png')
           }, {
             name: '拼住宿',
             href: '/',
-            icon: require('../../../assets/images/home.svg'),
-            carousel: require('../../../assets/images/home-swipe1.jpg')
+            icon: require('../../../assets/images/4.png')
           }, {
             name: '二手交易',
             href: '/',
-            icon: require('../../../assets/images/home.svg'),
-            carousel: require('../../../assets/images/home-swipe1.jpg')
+            icon: require('../../../assets/images/5.png')
           }],
         recommends: []
       }
@@ -146,10 +142,15 @@
             position: absolute;
             top: 11px;
             left: 50%;
-            width: 20px;
-            height: 20px;
+            width: 50px;
+            height: 50px;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+          }
+
+          .c-menu-span {
+            color: #333;
+            margin-top: 30px;
           }
         }
       }
@@ -157,20 +158,26 @@
 
     .container-recommend {
       padding: 4px;
-      margin-top: 10px;
+      background-color: #fff;
+
+      .recommend-title {
+        margin: 10px;
+        font-size: 1.1em;
+        font-weight: 600;
+      }
 
       .row {
         display: flex;
         width: 100%;
         box-sizing: border-box;
+        border-bottom: 1px solid #dcdcdc;
 
         .col {
           position: relative;
           flex: 0 0 33%;
           max-width: 33%;
           margin-right: 1px;
-          padding: 90px 0 10px 0;
-          border: 1px solid #eee;
+          padding: 120px 0 10px 0;
           background-color: #ffffff;
           text-align: center;
 
@@ -179,9 +186,14 @@
             position: absolute;
             top: 11px;
             left: 50%;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #dcdcdc;
             transform: translateX(-50%);
+          }
+
+          .red {
+            color: red;
           }
         }
       }

@@ -13,8 +13,8 @@ const mockData = {
               name: '团购推荐',
               type: 'buy',
               'list|3': [{
-                name: '团购商品名',
-                price: '123.45',
+                name: '滑雪板',
+                price: '1220',
                 img: require('../../../assets/images/home-swipe1.jpg'),
                 href: '123'
               }]

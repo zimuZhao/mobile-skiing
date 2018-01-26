@@ -22,7 +22,10 @@
   html, body {
     padding: 0;
     margin: 0;
-    background-color: #fafafa;
+    background-color: #f4f4f4;
+    font-family: "微软雅黑";
+    font-size: 12px;
+    color: rgb(102, 102, 102);
     -webkit-overflow-scrolling: touch;
     user-select: none;
   }
