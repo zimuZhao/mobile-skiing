@@ -38,23 +38,24 @@
   .page-back {
     display: inline-block;
     position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
+    top: 0.1em;
+    left: 1.5em;
     text-align: center;
     i {
-      font-size: 24px;
-      line-height: 40px;
+      font-size: 1.3em;
+      line-height: 2.5em;
     }
   }
 
   .page-title {
     display: block;
-    margin: 20px auto;
+    margin: 0;
+    height: 2.5em;
+    line-height: 2.5em;
     text-align: center;
-    font-size: 20px;
-    line-height: 1;
+    font-size: 1.3em;
+    color: #000;
+    background-color: #fff;
   }
 </style>
 

@@ -15,7 +15,7 @@ const mockData = {
               'list|3': [{
                 name: '滑雪板',
                 price: '1220',
-                img: require('../../../assets/images/home-swipe1.jpg'),
+                img: require('../../../assets/images/test.jpg'),
                 href: '123'
               }]
             },
@@ -25,7 +25,7 @@ const mockData = {
               'list|3': [{
                 name: 'X教练',
                 price: '123.45 / h',
-                img: require('../../../assets/images/home-swipe1.jpg'),
+                img: require('../../../assets/images/test.jpg'),
                 href: '123'
               }]
             },
@@ -35,7 +35,7 @@ const mockData = {
               'list|3': [{
                 name: '目的地',
                 price: '10 / 人',
-                img: require('../../../assets/images/home-swipe1.jpg'), // 图片区分是车主还是乘客
+                img: require('../../../assets/images/test.jpg'), // 图片区分是车主还是乘客
                 href: '123'
               }]
             },
@@ -45,7 +45,7 @@ const mockData = {
               'list|3': [{
                 name: '待设计',
                 price: '待设计',
-                img: require('../../../assets/images/home-swipe1.jpg'),
+                img: require('../../../assets/images/test.jpg'),
                 href: '123'
               }]
             },
@@ -55,7 +55,7 @@ const mockData = {
               'list|3': [{
                 name: '待设计',
                 price: '待设计',
-                img: require('../../../assets/images/home-swipe1.jpg'),
+                img: require('../../../assets/images/test.jpg'),
                 href: '123'
               }]
             }

@@ -35,9 +35,11 @@
                 <span>{{item.name}}</span>
               </div>
               <div class="product-price-m">总价：¥ {{item.total}}</div>
-              <div class="product-price-m">定金：¥ {{item.deposit}}</div>
-              <div class="gray-pro-info">起购人次: <span>{{item.count}}</span></div>
-              <div class="gray-pro-info">截止时间: <span>{{item.deadline}}</span></div>
+              <span class="product-price-m pro-deposit">定金：¥ {{item.deposit}}</span>
+              <div class="m-t-10">
+                <div class="gray-pro-info pull-left">起购人次: <span>{{item.count}}</span></div>
+                <div class="gray-pro-info pull-right">截止时间: <span>{{item.deadline}}</span></div>
+              </div>
             </div>
           </a>
         </li>
@@ -118,9 +120,20 @@
 <style lang="less">
   .recommend-buy {
 
+    .m-t-10 {
+      margin: 10px 10px 10px 0;
+    }
+
+    .pull-left {
+      float: left;
+    }
+
+    .pull-right {
+      float: right;
+    }
+
     .three-btn {
       display: flex;
-      margin-top: 5px;
       background-color: #ffffff;
 
       .btn-flex {
@@ -129,21 +142,23 @@
 
       .btn-sty {
         position: relative;
-        height: 40px;
-        line-height: 40px;
-        font-size: 14px;
+        height: 2.5em;
+        padding: 0.1em 0;
+        line-height: 2.5em;
         text-align: center;
-        border: 1px solid #eee;
+        border-top: 1px solid #d7d7d7;
+        border-left: 1px solid #d7d7d7;
+        border-bottom: 1px solid #d7d7d7;
 
         .arrow-down {
           position: absolute;
           right: 15px;
-          top: 18px;
+          top: 12px;
           width: 0;
           height: 0;
           content: "";
           border: 4px solid transparent;
-          border-top: 4px solid #000;
+          border-top: 4px solid #666;
           font-size: 0;
           line-height: 0;
         }
@@ -151,12 +166,12 @@
         .arrow-up {
           position: absolute;
           right: 15px;
-          top: 18px;
+          top: 12px;
           width: 0;
           height: 0;
           content: "";
           border: 4px solid transparent;
-          border-bottom: 4px solid #000;
+          border-bottom: 4px solid #666;
           font-size: 0;
           line-height: 0;
         }
@@ -174,8 +189,11 @@
       }
 
       .page-infinite-listitem {
-        height: 131px;
+        height: 105px;
+        margin-bottom: 10px;
+        padding: 10px 0;
         position: relative;
+        background-color: #fff;
         border-bottom: 1px solid #eee;
 
         a {
@@ -195,8 +213,9 @@
             img {
               display: inline-block;
               width: auto;
-              max-width: 125px;
-              height: 125px;
+              max-width: 100px;
+              height: 100px;
+              border:1px solid #dcdcdc;
             }
           }
 
@@ -241,17 +260,17 @@
               }
             }
 
+            .pro-deposit {
+              padding: 1px 5px 1px 0px;
+              background-color: #ff545d;
+              color: #fff;
+              border-radius: 5px;
+            }
+
             .gray-pro-info {
               color: #848689;
-              font-size: 13px;
-              display: -webkit-box;
-              display: box;
-              margin-top: 8px;
-              overflow: hidden;
-              height: 15px;
-              line-height: 16px;
-              -webkit-box-align: center;
-              box-align: center;
+              font-size: 12px;
+              display: inline-block;
             }
 
           }
